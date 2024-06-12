@@ -1,0 +1,132 @@
+{
+    "properties": [
+      {
+        "id": "1",
+        "image": "https://ahmedelsewailky.github.io/estateX/images/image-5.jpg",
+        "title": "Elegant City Center Condo",
+        "description": "A modern 2-bedroom condo offering luxurious living with great city views and extensive facilities.",
+        "amenities": [
+          "Swimming Pool",
+          "Gym",
+          "Parking",
+          "24/7 Security",
+          "Wi-Fi",
+          "Air Conditioning"
+        ],
+        "rent_per_month": 3100,
+        "for_sell": false,
+        "tags": [
+          "Newly Renovated",
+          "Close to Schools",
+          "Pet Friendly"
+        ],
+        "like": 180,
+        "view": 950,
+        "add_favorites": 80
+      },
+      {
+        "id": "2",
+        "image": "https://ahmedelsewailky.github.io/estateX/images/image-1.jpg",
+        "title": "Luxury Beachfront Villa",
+        "description": "A stunning beachfront villa with panoramic ocean views, private pool, and direct beach access.",
+        "amenities": [
+          "Private Pool",
+          "Beach Access",
+          "Jacuzzi",
+          "BBQ Area",
+          "Garden",
+          "Air Conditioning"
+        ],
+        "rent_per_month": 5500,
+        "for_sell": false,
+        "tags": [
+          "Oceanfront",
+          "Luxury Living",
+          "Family Friendly"
+        ],
+        "like": 230,
+        "view": 1100,
+        "add_favorites": 120
+      },
+      {
+        "id": "3",
+        "image": "https://ahmedelsewailky.github.io/estateX/images/image-2.jpg",
+        "title": "Cozy Mountain Cabin",
+        "description": "A charming mountain cabin nestled in the woods, perfect for a peaceful getaway and outdoor adventures.",
+        "amenities": [
+          "Fireplace",
+          "Hot Tub",
+          "Hiking Trails",
+          "Deck",
+          "Pet Friendly",
+          "Heating"
+        ],
+        "rent_per_month": 2000,
+        "for_sell": false,
+        "tags": [
+          "Secluded",
+          "Nature Retreat",
+          "Rustic Charm"
+        ],
+        "like": 120,
+        "view": 800,
+        "add_favorites": 60
+      },
+      {
+        "id": "4",
+        "image": "https://ahmedelsewailky.github.io/estateX/images/image-3.jpg",
+        "title": "Modern City Apartment",
+        "description": "A sleek and modern apartment in the heart of the city, close to all amenities and public transportation.",
+        "amenities": [
+          "Balcony",
+          "Fitness Center",
+          "Concierge",
+          "Parking",
+          "Security",
+          "Air Conditioning"
+        ],
+        "rent_per_month": 2800,
+        "for_sell": false,
+        "tags": [
+          "City Living",
+          "Convenient Location",
+          "Contemporary Design"
+        ],
+        "like": 150,
+        "view": 900,
+        "add_favorites": 70
+      },
+      {
+        "id": "5",
+        "image": "https://ahmedelsewailky.github.io/estateX/images/image-4.jpg",
+        "title": "Rustic Country Farmhouse",
+        "description": "A charming farmhouse surrounded by rolling hills and picturesque countryside, perfect for a peaceful retreat.",
+        "amenities": [
+          "Wraparound Porch",
+          "Garden",
+          "Fire Pit",
+          "Pet Friendly",
+          "Heating",
+          "Air Conditioning"
+        ],
+        "rent_per_month": 1800,
+        "for_sell": false,
+        "tags": [
+          "Rural Living",
+          "Scenic Views",
+          "Historic Charm"
+        ],
+        "like": 90,
+        "view": 700,
+        "add_favorites": 40
+      }
+      
+      
+      
+      
+    ],
+    "listing":[
+
+
+    ]
+  }
