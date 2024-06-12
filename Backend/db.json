@@ -1,3 +1,186 @@
+
+
 {
-    "route":[]
+  "route": [
+    {
+      "image": "https://ahmedelsewailky.github.io/estateX/images/image-2.jpg",
+      "title": "Modern Apartment Skyline View",
+      "description": "A sleek and stylish 2-bedroom apartment offering panoramic city views and premium facilities.",
+      "amenities": [
+        "Swimming Pool",
+        "Gym",
+        "Parking",
+        "24/7 Security",
+        "Wi-Fi",
+        "Air Conditioning"
+      ],
+      "rent_per_month": 3200,
+      "for_sell": true,
+      "tags": [
+        "High Floor",
+        "Close to Shopping Centers",
+        "Pet Friendly"
+      ],
+      "like": 150,
+      "view": 900,
+      "add_favorites": 75
+    },
+    {
+      "image": "https://ahmedelsewailky.github.io/estateX/images/image-3.jpg",
+      "title": "Luxurious Downtown Apartment",
+      "description": "A spacious 3-bedroom apartment in the heart of downtown with stunning cityscape views.",
+      "amenities": [
+        "Swimming Pool",
+        "Gym",
+        "Parking",
+        "24/7 Security",
+        "Wi-Fi",
+        "Air Conditioning"
+      ],
+      "rent_per_month": 3500,
+      "for_sell": true,
+      "tags": [
+        "Newly Built",
+        "Near Public Transport",
+        "Pet Friendly"
+      ],
+      "like": 200,
+      "view": 1000,
+      "add_favorites": 90
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqjzVj2OG7oU8K72QUdpBABuQRG7NMzZEw9w&s",
+      "title": "Elegant City Center Condo sky View",
+      "description": "A modern 2-bedroom condo offering luxurious living with great city views and extensive facilities.",
+      "amenities": [
+        "Swimming Pool",
+        "Gym",
+        "Parking",
+        "24/7 Security",
+        "Wi-Fi",
+        "Air Conditioning"
+      ],
+      "rent_per_month": 3100,
+      "for_sell": false,
+      "tags": [
+        "Newly Renovated",
+        "Close to Schools",
+        "Pet Friendly"
+      ],
+      "like": 180,
+      "view": 950,
+      "add_favorites": 80
+    },
+    {
+      "image": "https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRuFK3SavTtXFR_6zEeljHWYn5aqxV95egJ6yzgPEUeO3zLf9lq1_urz1Zn5ChOF-Jb",
+      "title": "Luxury Apartment Heart of the City",
+      "description": "A 3-bedroom apartment with modern amenities and breathtaking views located in the city.",
+      "amenities": [
+        "Swimming Pool",
+        "Gym",
+        "Parking",
+        "24/7 Security",
+        "Wi-Fi",
+        "Air Conditioning"
+      ],
+      "rent_per_month": 3300,
+      "for_sell": true,
+      "tags": [
+        "High-End Finishes",
+        "Near Metro",
+        "Pet Friendly"
+      ],
+      "like": 160,
+      "view": 980,
+      "add_favorites": 70
+    },
+    {
+      "image": "https://ahmedelsewailky.github.io/estateX/images/image-4.jpg",
+      "title": "Cozy Suburban Home",
+      "description": "A charming 3-bedroom home with a spacious backyard, perfect for families.",
+      "amenities": [
+        "Parking",
+        "Wi-Fi",
+        "Air Conditioning",
+        "Garden",
+        "Garage"
+      ],
+      "rent_per_month": 2500,
+      "for_sell": true,
+      "tags": [
+        "Quiet Neighborhood",
+        "Close to Schools",
+        "Pet Friendly"
+      ],
+      "like": 130,
+      "view": 800,
+      "add_favorites": 60
+    },
+    {
+      "image": "https://ahmedelsewailky.github.io/estateX/images/image-5.jpg",
+      "title": "Stylish Urban Loft",
+      "description": "A trendy 1-bedroom loft in the heart of the city with modern design and amenities.",
+      "amenities": [
+        "Gym",
+        "Parking",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24/7 Security"
+      ],
+      "rent_per_month": 2800,
+      "for_sell": false,
+      "tags": [
+        "Industrial Design",
+        "Close to Nightlife",
+        "Pet Friendly"
+      ],
+      "like": 190,
+      "view": 870,
+      "add_favorites": 85
+    },
+    {
+      "image": "https://ahmedelsewailky.github.io/estateX/images/image-6.jpg",
+      "title": "Spacious Family House",
+      "description": "A large 4-bedroom house with a beautiful garden and ample living space.",
+      "amenities": [
+        "Parking",
+        "Wi-Fi",
+        "Air Conditioning",
+        "Garden",
+        "Garage"
+      ],
+      "rent_per_month": 4000,
+      "for_sell": true,
+      "tags": [
+        "Family Friendly",
+        "Close to Parks",
+        "Pet Friendly"
+      ],
+      "like": 220,
+      "view": 1100,
+      "add_favorites": 95
+    },
+    {
+      "image": "https://ahmedelsewailky.github.io/estateX/images/image-7.jpg",
+      "title": "Modern Studio Apartment",
+      "description": "A compact and stylish studio apartment perfect for singles or young professionals.",
+      "amenities": [
+        "Gym",
+        "Wi-Fi",
+        "Air Conditioning",
+        "24/7 Security"
+      ],
+      "rent_per_month": 2200,
+      "for_sell": false,
+      "tags": [
+        "City Center",
+        "Close to Public Transport",
+        "Pet Friendly"
+      ],
+      "like": 140,
+      "view": 720,
+      "add_favorites": 55
+    }
+    
+  ]
 }

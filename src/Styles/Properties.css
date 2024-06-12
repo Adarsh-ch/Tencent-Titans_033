@@ -1,0 +1,201 @@
+/* .heading-cards{
+    color: rgb(65, 63, 63);
+    font-family: sans-serif;
+    text-align: center;
+}
+.properties-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.property-card {
+    width: 300px;
+    margin: 10px;
+    border: 1px solid #ccc;
+   
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.property-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.property-icons span {
+    margin-right: 5px;
+}
+
+.property-card h3,
+.property-card p,
+.property-card h4 {
+    margin: 10px;
+}
+h4{
+    font-family: sans-serif;
+    color:  rgb(65, 63, 63);
+
+}
+.price{
+    font-family: sans-serif;
+    color: green;
+}
+h5{
+    font-family: sans-serif;
+    color: rgb(34, 32, 32);
+    font-weight: lighter;
+    margin-left: 10px;
+}
+p{
+    font-family: sans-serif;
+}
+.amenities{
+    background-color: rgb(164, 165, 164);
+    padding: 5px 10px;
+    display: flex;
+   
+    
+}
+.amenities img{
+    border-radius: 50%;
+}
+.text{
+    color: white;
+    font-family: sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+  */
+
+
+  .heading-cards {
+    color: rgb(65, 63, 63);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.slick-slider {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.slick-slide {
+    margin: 0 10px;
+}
+
+.property-card {
+    width: 350px;
+
+    margin: 10px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.property-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.property-icons span {
+    margin-right: 5px;
+}
+
+.property-card h3,
+.property-card p,
+.property-card h4 {
+    margin: 10px;
+}
+
+h4 {
+    font-family: sans-serif;
+    color:  rgb(65, 63, 63);
+}
+
+.price {
+    font-family: sans-serif;
+    color: green;
+}
+
+h5 {
+    font-family: sans-serif;
+    color: rgb(34, 32, 32);
+    font-weight: lighter;
+    margin-left: 10px;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+.amenities {
+    background-color: rgb(164, 165, 164);
+    padding: 5px 10px;
+    display: flex;
+}
+
+.amenities img {
+    border-radius: 50%;
+}
+
+.text {
+    color: white;
+    font-family: sans-serif;
+}
