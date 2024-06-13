@@ -6,11 +6,11 @@ import PropertyDetailPage from './pages/PropertyDetailPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import UserDashboardPage from './pages/UserDashboardPage';
-import AdminPage from './pages/AdminPage';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
-import SearchBar from './components/common/SearchBar';
+// import SearchBar from './components/common/SearchBar';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import AdminDashboard from './components/Admin/AdminDashboard';
 
 const App: React.FC = () => {
   return (
@@ -25,7 +25,8 @@ const App: React.FC = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/user/dashboard" element={<UserDashboardPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+
       </Routes>
       <Footer />
     </Router>

@@ -11,13 +11,20 @@
     "start": "json-server --watch server/db.json --port 5001"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.20",
+    "@mui/material": "^5.15.20",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "firebase": "^10.12.2",
+    "install": "^0.13.0",
     "json-server": "^1.0.0-beta.1",
+    "npm": "^10.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
+    "react-pro-sidebar": "^1.1.0",
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
