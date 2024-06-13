@@ -1,39 +1,50 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../services/firebase';
+import { Alert } from 'react-bootstrap';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState<string>('');
+  const navigate = useNavigate();
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Redirect or show success message
-    } catch (error) {
-      // Handle error
+
+    if (emailRef.current && passwordRef.current) {
+      const email = emailRef.current.value;
+      const password = passwordRef.current.value;
+
+      try {
+        setError('');
+        await signInWithEmailAndPassword(auth, email, password);
+        // Redirect or show success message
+        navigate('/')
+      } catch (error) {
+        // Handle error
+        setError('Failed to login');
+      }
     }
   };
 
   return (
+    <>
+    {error && <Alert variant='danger'>{error}</Alert>}
     <form onSubmit={handleLogin}>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
+      <input type="email" ref={emailRef} placeholder="Email" required />
       <input
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        ref={passwordRef}
         placeholder="Password"
         required
       />
       <button type="submit">Login</button>
     </form>
+    <NavLink to='/forgot-password'>Forgot Password?</NavLink>
+    <p>Need an account <NavLink to='/register'>Register</NavLink></p>
+    </>
   );
 };
 
