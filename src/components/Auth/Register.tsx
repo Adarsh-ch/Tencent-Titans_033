@@ -8,7 +8,7 @@ const Register: React.FC = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const confirmPasswordRef = useRef<HTMLInputElement>(null);
-  const [error,setError] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const navigate = useNavigate();
 
   const handleRegister = async (event: React.FormEvent) => {
@@ -29,9 +29,13 @@ const Register: React.FC = () => {
           await createUserWithEmailAndPassword(auth, email, password);
           // Redirect or show success message
           navigate('/');
-        } catch (error) {
-          // Handle error
-          setError(error.message);
+        } catch (error: unknown) {
+          // Ensure the error is of type Error
+          if (error instanceof Error) {
+            setError(error.message);
+          } else {
+            setError('An unexpected error occurred');
+          }
         }
       } else {
         // Handle password mismatch error
@@ -42,29 +46,29 @@ const Register: React.FC = () => {
 
   return (
     <>
-    {error && <Alert variant='danger'>{error}</Alert>}
-    <form onSubmit={handleRegister}>
-      <input
-        type="email"
-        placeholder="Email"
-        ref={emailRef}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        ref={passwordRef}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Confirm Password"
-        ref={confirmPasswordRef}
-        required
-      />
-      <button type="submit">Register</button>
-      <p>Already have an account <NavLink to='/login'>Login</NavLink></p>
-    </form>
+      {error && <Alert variant='danger'>{error}</Alert>}
+      <form onSubmit={handleRegister}>
+        <input
+          type="email"
+          placeholder="Email"
+          ref={emailRef}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          ref={passwordRef}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          ref={confirmPasswordRef}
+          required
+        />
+        <button type="submit">Register</button>
+        <p>Already have an account? <NavLink to='/login'>Login</NavLink></p>
+      </form>
     </>
   );
 };

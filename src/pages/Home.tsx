@@ -8,6 +8,7 @@ const Home: React.FC = () => {
   return <div>
     Welcome to Real Estate App
     <p>{currentUser?.email}</p>
+    
     <SearchBar />
   </div>;
 };
