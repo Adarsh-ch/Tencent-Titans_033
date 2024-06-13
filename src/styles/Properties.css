@@ -1,0 +1,49 @@
+.property-card{
+    height: 410px;
+    width: 300px;
+    border: 1px solid rgb(189, 189, 189);
+    text-align: center;
+    overflow: hidden;
+    
+}
+.property-card img {
+    height: 250px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    
+  
+}
+.property-card img:hover{
+    transform: scale(1.2); 
+}
+.view-btn{
+    padding: 5px 20px;
+    background-image: linear-gradient(to right, #15803D, #86EFAC);
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    border-radius: 5px;
+    
+}
+.product-title{
+    font-family: sans-serif;
+    color: rgb(90, 89, 89);
+    margin-top: 30px;
+    
+}
+.product-rent{
+    font-family: sans-serif;
+    color: rgb(90, 89, 89);
+    font-weight: bolder;
+  
+    
+}
+.property-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 20px;
+    justify-content: center;
+}
+
