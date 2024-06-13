@@ -4,6 +4,7 @@ import { User } from 'firebase/auth';
 
 interface AuthContextProps {
   currentUser: User | null;
+  logout: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -19,6 +20,10 @@ export const useAuth = () => {
 const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
 
+  const logout = () => {
+    return auth.signOut();
+  }
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user: User | null) => {
       setCurrentUser(user);
@@ -27,7 +32,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   }, []);
 
   return (
-    <AuthContext.Provider value={{ currentUser }}>
+    <AuthContext.Provider value={{ currentUser,logout }}>
       {children}
     </AuthContext.Provider>
   );

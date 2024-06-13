@@ -21,7 +21,7 @@ const Login: React.FC = () => {
         setError('');
         await signInWithEmailAndPassword(auth, email, password);
         // Redirect or show success message
-        navigate('/')
+        navigate('/');
       } catch (error) {
         // Handle error
         setError('Failed to login');
@@ -31,19 +31,21 @@ const Login: React.FC = () => {
 
   return (
     <>
-    {error && <Alert variant='danger'>{error}</Alert>}
-    <form onSubmit={handleLogin}>
-      <input type="email" ref={emailRef} placeholder="Email" required />
-      <input
-        type="password"
-        ref={passwordRef}
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
-    <NavLink to='/forgot-password'>Forgot Password?</NavLink>
-    <p>Need an account <NavLink to='/register'>Register</NavLink></p>
+      {error && <Alert variant="danger">{error}</Alert>}
+      <form onSubmit={handleLogin}>
+        <input type="email" ref={emailRef} placeholder="Email" required />
+        <input
+          type="password"
+          ref={passwordRef}
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <NavLink to="/forgot-password">Forgot Password?</NavLink>
+      <p>
+        Need an account <NavLink to="/register">Register</NavLink>
+      </p>
     </>
   );
 };
