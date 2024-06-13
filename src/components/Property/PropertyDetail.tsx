@@ -11,11 +11,11 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
       <img src={property.image} alt={property.title} />
       <h1>{property.title}</h1>
       <p>{property.description}</p>
-      <ul>
+      {/* <ul>
         {property.amenities.map((amenity, index) => (
           <li key={index}>{amenity}</li>
         ))}
-      </ul>
+      </ul> */}
       <p>Rent per month: ${property.rent_per_month}</p>
     </div>
   );
