@@ -6,6 +6,8 @@ import { useAuth } from "../../context/AuthContext"
 const Register =() => {
   const emailRef = useRef<HTMLInputElement>(null)
   const passwordRef = useRef<HTMLInputElement>(null)
+  const [show, setShow] = useState<boolean>(false);
+  const [password, setPassword] = useState<string>('');
   const passwordConfirmRef = useRef<HTMLInputElement>(null)
   const { signup } = useAuth()
   const [error, setError] = useState<string>("")
@@ -48,8 +50,24 @@ const Register =() => {
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
+            <Form.Label>Password</Form.Label>
+            <div className="input-password">
+                <Form.Control
+                  type={show ? 'text' : 'password'}
+                  value={password}
+                  ref={passwordRef}
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                >
+                </Form.Control>
+                <span onClick={() => setShow((prev) => !prev)}>
+                  {show ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                  )}
+                </span>
+              </div>
             </Form.Group>
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>

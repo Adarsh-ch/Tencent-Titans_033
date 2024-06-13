@@ -11,7 +11,6 @@ import './App.css'
 const App: React.FC = () => {
   const { currentUser } = useAuth();
 
-  if (currentUser)
     return (
       <Router>
         <Navbar />
@@ -19,14 +18,6 @@ const App: React.FC = () => {
       </Router>
     );
 
-  return <Router>
-    <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-          <Route path="*" element={<Navigate to="/login" />} />
-        </Routes>
-  </Router>
 };
 
 export default App;
