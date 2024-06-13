@@ -13,8 +13,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   <div >
      <div className="property-card">
         <img src={property.image} alt={property.title}/>
-        <h5 className='product-title'>{property.title}</h5>
-        <p className='product-rent' >${property.rent}</p>
+        <p className='product-title'>{property.title}</p>
+        <p className='product-rent' ><b>Rent</b>${property.rent}/month</p>
         <Link to={`/properties/${property.id}`} className='view-btn'>View Details</Link>
       </div>
   </div>

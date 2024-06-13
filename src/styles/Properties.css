@@ -4,6 +4,8 @@
     border: 1px solid rgb(189, 189, 189);
     text-align: center;
     overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 5px;
     
 }
 .property-card img {
@@ -30,6 +32,7 @@
     font-family: sans-serif;
     color: rgb(90, 89, 89);
     margin-top: 30px;
+   
     
 }
 .product-rent{
