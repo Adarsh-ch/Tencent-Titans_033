@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    max-width: 1240px;
 }
 .Container-h>h3{
     font-size: 26px;
@@ -20,6 +21,7 @@
     display: flex;
    
     width: 80%;
+    max-width: 1240px;
     height: auto;
     margin: auto;
     margin-top: 10px;
@@ -117,10 +119,7 @@
    .form-p>div>input,select,textarea{
         width: 100px;
     }
-    .form-p>div{
-       
-        
-    }
+   
     .form-p>button{
         width: 250px;
     }

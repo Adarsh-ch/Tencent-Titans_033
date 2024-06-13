@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    width: auto;
+    max-width: 1440px;
+    margin: auto;
+    height: 100px;
+    border-bottom: 0.5px solid gray;
+}
+nav img{
+    width: 166px;
+}
