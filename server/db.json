@@ -2,7 +2,7 @@
     "properties": [
       {
         "id": 1,
-        "description": "2 bhk flat in open house trip bangalore for rent in bangalore",
+        "description": "2 BHK flat in open house trip bangalore for rent in bangalore",
         "title": "Mahalakshmipuram Aditya Hotel",
         "location": "Bangalore",
         "rent": 21000,
@@ -68,7 +68,7 @@
       {
         "id": 6,
         "description": "1 bhk flat in stand alone building for lease in madheshwara nagara",
-        "title": "near forest gate",
+        "title": "Near Forest Gate",
         "location": "madheshwara nagara",
         "rent": "only deposit",
         "maintenance": "no extra maintenance",
@@ -80,8 +80,8 @@
       },
       {
         "id": 7,
-        "description": "2 bhk house for rent in ullal",
-        "title": "independent house, vidhyanikethan nearby",
+        "description": "2 BHK house for rent in ullal",
+        "title": "Independent House,Vidhyanikethan",
         "location": "ullal",
         "rent": 10000,
         "maintenance": "no extra maintenance",
@@ -93,8 +93,8 @@
       },
       {
         "id": 8,
-        "description": "2 bhk flat in stand for rent in laggere",
-        "title": "8th main, 7th cross near honda showroom",
+        "description": "2 BHK flat in stand for rent in laggere",
+        "title": "8th main,near honda showroom",
         "location": "laggere",
         "rent": 13500,
         "maintenance": 500,
