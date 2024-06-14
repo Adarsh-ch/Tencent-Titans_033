@@ -1,5 +1,5 @@
 .property-card {
-    height: 450px;
+    height: 400px;
     width: 300px;
     border: 1px solid rgb(189, 189, 189);
     text-align: start;
@@ -65,21 +65,17 @@
 .property-list {
     display: flex;
     flex-wrap: wrap;
- 
+    /* width:75%; */
     gap: 20px;
-    justify-content: center;
-  
-    width: 75%;
+    height:max-content;
+    /* justify-content: center; */
 }
+
 .filter-section{
-    height: fit-content;
-     width: 25%;
+     width: 33%;
      border: 1px solid rgb(170, 167, 167);
      background-color: #F8FAFC;
-  
-
-   
- 
+     height:max-content;
     display: flex;
     flex-direction: column;
    padding: 20px;
@@ -123,12 +119,25 @@
 }
 .main-container{
     display: flex;
-  
- 
+    justify-content: center;
+    gap:30px;
     width: 100%;
     max-width: 1440px;
-    margin: auto;
-    margin-top: 30px;
+    padding:30px 0px 30px 40px;
+}
+
+.pagination{
+    gap:10px;
+    align-items: center;
+    margin:40px;
+}
+
+.pagination>button{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:1px solid grey;
+    background-color: white;
 }
 .type{
     display: flex;

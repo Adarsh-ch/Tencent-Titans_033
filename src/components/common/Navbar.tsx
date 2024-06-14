@@ -6,6 +6,7 @@ import { useAuth } from '../../context/AuthContext';
 
 const Navbar: React.FC = () => {
   const { currentUser } = useAuth();
+  // console.log(currentUser?.updateProfile,color='rgb(72,176,145)')
   const {logout} = useAuth();
 
   return (
@@ -17,7 +18,7 @@ const Navbar: React.FC = () => {
         <NavLink
           to="/"
           style={({ isActive }) =>
-            isActive ? { color: 'rgb(72,176,145)' } : { color: 'black' }
+            isActive ? { color: 'green' } : { color: 'black' }
           }
         >
           Home
@@ -25,7 +26,7 @@ const Navbar: React.FC = () => {
         <NavLink
           to="/properties"
           style={({ isActive }) =>
-            isActive ? { color: 'rgb(72,176,145)' } : { color: 'black' }
+            isActive ? { color: 'green' } : { color: 'black' }
           }
         >
           Properties
@@ -33,21 +34,23 @@ const Navbar: React.FC = () => {
         <NavLink
           to={'/postyourproperty'}
           style={({ isActive }) =>
-            isActive ? { color: 'rgb(72,176,145)' } : { color: 'black' }
+            isActive ? { color: 'green' } : { color: 'black' }
           }
         >
           <button
             style={{
               color: 'white',
-              backgroundColor: 'rgb(72,176,145)',
+              backgroundColor: 'green',
               border: 'none',
+              borderRadius:'2px',
               padding: '4px 8px',
             }}
           >
             Post Your Property
           </button>
         </NavLink>
-        {currentUser ? (
+        {currentUser ? (<>
+          <button className='fs-4 items' style={{border:'none',background:'none'}}><i className="fa-regular fa-bell"></i><span className='count'>{0}</span></button>
           <div className="dropdown d-inline py-3">
             <button
               className="btn dropdown"
@@ -78,12 +81,13 @@ const Navbar: React.FC = () => {
               </li>
             </ul>
           </div>
+          </>
         ) : (
           <>
             <NavLink
               to="/login"
               style={({ isActive }) =>
-                isActive ? { color: 'rgb(72,176,145)' } : { color: 'black' }
+                isActive ? { color: 'green' } : { color: 'black' }
               }
             >
               Login
@@ -91,7 +95,7 @@ const Navbar: React.FC = () => {
             <NavLink
               to="/register"
               style={({ isActive }) =>
-                isActive ? { color: 'rgb(72,176,145)' } : { color: 'black' }
+                isActive ? { color: 'green' } : { color: 'black' }
               }
             >
               Sign Up

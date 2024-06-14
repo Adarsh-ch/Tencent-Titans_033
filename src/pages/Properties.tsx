@@ -6,11 +6,12 @@ import Footer from '../components/common/Footer';
 const Properties: React.FC = () => {
   
   return (
+    <>
     <div className='property-container'>
           <PropertyList />;
-          <Footer/>
     </div>
-
+    <Footer />
+    </>
   )
 
 };
