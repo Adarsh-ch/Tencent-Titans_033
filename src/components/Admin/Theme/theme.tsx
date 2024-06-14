@@ -4,10 +4,10 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const lightTheme = extendTheme({
   colors: {
-    primary: "#1976d2",
-    secondary: "#dc004e",
+    primary: "#007C52",
+    secondary: "#012D21",
     background: "#ffffff",
-    text: "#333333",
+    text: "#013220",
   },
   fonts: {
     body: "Roboto, sans-serif",
@@ -17,8 +17,8 @@ export const lightTheme = extendTheme({
 
 export const darkTheme = extendTheme({
   colors: {
-    primary: "#90caf9",
-    secondary: "#f48fb1",
+    primary: "#013220",
+    secondary: "#012D21",
     background: "#7f7f7f",
     text: "#ffffff",
   },

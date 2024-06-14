@@ -22,7 +22,7 @@ export const Sidebar = () => {4
       };
 
   return (
-    <Box p={4} bg={theme.colors.background} color={theme.colors.primary} minH="100vh">
+    <Box p={4} bg={theme.colors.background} color={theme.colors.primary} height="100%" textAlign="center">
       <Text fontSize="2xl" mb={4}>Hello, Admin</Text>
       <VStack align="stretch" spacing={2}>
         <NavLink 
