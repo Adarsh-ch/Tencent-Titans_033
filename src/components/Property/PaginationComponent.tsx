@@ -8,9 +8,9 @@ import { SET_PAGE, SET_PREV } from '../../redux/actionTypes';
 const PaginationComponent = () => {
   const [count, setCount] = useState(0);
   const filter = useSelector((store: RootState) => store.filter);
-  const queryString = useQuery();
+  const {queryString,propertyString} = useQuery();
   const dispatch = useDispatch();
-  // console.log(filter.prev,count/6+count%6,count)
+  console.log(filter.prev,count,propertyString)
 
   const handlePrev = () => {
     dispatch({ type: SET_PREV, payload: filter.prev - 3 });
@@ -24,11 +24,11 @@ const PaginationComponent = () => {
 
   useEffect(() => {
     const loadProperties = async () => {
-      const response = await fetchProperties('');
+      const response = await fetchProperties(propertyString);
       setCount(response.length);
     };
     loadProperties();
-  }, [queryString]);
+  }, [propertyString]);
 
   return (
     <div className="d-flex pagination">
@@ -36,7 +36,7 @@ const PaginationComponent = () => {
         <i className="fa-solid fa-chevron-left"></i>
       </button>
       <button
-        disabled={filter.prev > count}
+        disabled={(filter.prev-1)*6 >= count}
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' })
           dispatch({ type: SET_PAGE, payload: filter.prev })
@@ -49,7 +49,7 @@ const PaginationComponent = () => {
         {filter.prev}
       </button>
       <button
-        disabled={filter.prev + 1 > count}
+        disabled={filter.prev*6 >= count}
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' })
           dispatch({ type: SET_PAGE, payload: filter.prev + 1 })
@@ -62,7 +62,7 @@ const PaginationComponent = () => {
         {filter.prev + 1}
       </button>
       <button
-        disabled={filter.prev + 2 > count}
+        disabled={(filter.prev + 1)*6 >= count}
         onClick={() => {
           window.scrollTo({ top: 0, behavior: 'smooth' })
           dispatch({ type: SET_PAGE, payload: filter.prev + 2 })

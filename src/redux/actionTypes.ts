@@ -7,5 +7,5 @@ export const SET_FLAT_TYPE = 'SET_FLAT_TYPE';
 export const SET_CATEGORY = 'SET_CATEGORY';
 export const SET_PAGE = 'SET_PAGE';
 export const SET_PREV = 'SET_PREV';
-export const SET_NEXT = 'SET_NEXT';
+export const SET_ORDER = 'SET_ORDER';
 export const RESET_FILTERS = 'RESET_FILTERS';

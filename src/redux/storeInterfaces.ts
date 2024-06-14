@@ -8,6 +8,7 @@ export interface FilterState {
     category: string;
     page:number;
     limit:number;
+    order:string;
     prev:number;
   }
   

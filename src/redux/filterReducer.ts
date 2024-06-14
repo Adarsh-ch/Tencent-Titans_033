@@ -5,8 +5,10 @@ import {
   SET_FLAT_TYPE,
   SET_FURNITURE_TYPE,
   SET_LOCATION,
+  SET_ORDER,
   SET_PAGE,
   SET_PREV,
+  SET_PROPERTY_TYPE,
   SET_RENT,
 } from './actionTypes';
 import { Action, FilterState } from './storeInterfaces';
@@ -21,6 +23,7 @@ const initialState: FilterState = {
   category: '',
   page: 1,
   limit:6,
+  order:'',
   prev: 1,
 };
 
@@ -37,6 +40,8 @@ const filterReducer = (
       return { ...state, area: payload };
     case SET_FURNITURE_TYPE:
       return { ...state, furnitureType: payload };
+      case SET_PROPERTY_TYPE:
+      return { ...state, propertyType: payload };
     case SET_FLAT_TYPE:
       return { ...state, flatType: payload };
     case SET_CATEGORY:
@@ -45,6 +50,8 @@ const filterReducer = (
       return { ...state, page: payload };
     case SET_PREV:
       return { ...state, prev: payload };
+      case SET_ORDER:
+      return { ...state, order: payload };
     case RESET_FILTERS:
       return initialState;
     default:

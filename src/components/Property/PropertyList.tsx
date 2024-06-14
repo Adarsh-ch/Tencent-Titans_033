@@ -4,14 +4,13 @@ import PropertyCard from './PropertyCard';
 import { Property } from '../../types';
 import '../../styles/Properties.css';
 import Filter from './Filter';
-import { Pagination } from 'react-bootstrap';
 import useQuery from '../../hooks/useQuery';
 import PaginationComponent from './PaginationComponent';
 
 
 const PropertyList: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
-  const queryString = useQuery()
+  const {queryString} = useQuery()
   // const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
