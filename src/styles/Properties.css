@@ -1,52 +1,130 @@
-.property-card{
-    height: 410px;
+.property-card {
+    height: 400px;
     width: 300px;
     border: 1px solid rgb(189, 189, 189);
     text-align: center;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    border-radius: 5px;
-    
+   
+
 }
+
 .property-card img {
     height: 250px;
     width: 300px;
     transition: transform 0.3s ease;
+
+
+}
+
+.property-type-tag {
+    position: absolute;
+    margin-left: -80px;
+    margin-top: 5px;
+    background-color: rgba(0, 128, 0, 0.7);
     
-  
-}
-.property-card img:hover{
-    transform: scale(1.2); 
-}
-.view-btn{
+    color: white;
     padding: 5px 20px;
-    background-image: linear-gradient(to right, #15803D, #86EFAC);
+    font-family: sans-serif;
+
+}
+
+.property-card img:hover {
+    transform: scale(1.09);
+}
+
+.view-btn {
+    padding: 5px 20px;
+    background: green;
     color: white;
     border: none;
     text-decoration: none;
     font-family: sans-serif;
-    border-radius: 5px;
-    
+   
+
 }
-.product-title{
+
+.product-title {
     font-family: sans-serif;
     color: rgb(90, 89, 89);
-    margin-top: 30px;
-   
-    
+    margin-top: 10px;
+
+
 }
-.product-rent{
+
+.product-rent {
     font-family: sans-serif;
     color: rgb(90, 89, 89);
     font-weight: bolder;
-  
-    
-}
-.property-list{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    gap: 20px;
-    justify-content: center;
+
+
 }
 
+.property-list {
+    display: flex;
+    flex-wrap: wrap;
+ 
+    gap: 20px;
+    justify-content: center;
+  
+    width: 75%;
+}
+.filter-section{
+    height: fit-content;
+     width: 25%;
+     border: 1px solid rgb(170, 167, 167);
+     background-color: #F8FAFC;
+  
+
+   
+ 
+    display: flex;
+    flex-direction: column;
+   padding: 20px;
+    gap: 50px;
+    
+   
+}
+.input-box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 10px;
+    
+}
+.input-box p{
+    margin-top: 10px;
+    font-family: sans-serif;
+    
+}
+.type-heading{
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(92, 91, 91);
+    margin-left: 10px;
+}
+.property-type{
+    border-left: 1px solid green;
+}
+.flat_type{
+    border-left:  1px solid green;
+
+}
+.prefer_category{
+    border-left:  1px solid green;
+}
+.price{
+    border-left:  1px solid green;
+}
+.funiture-type{
+    border-left:  1px solid green;
+}
+.main-container{
+    display: flex;
+  
+ 
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 30px;
+}

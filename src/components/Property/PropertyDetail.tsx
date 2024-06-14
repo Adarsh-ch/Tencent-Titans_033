@@ -4,6 +4,7 @@
 import React from 'react';
 import { Property } from '../../types';
 import '../../styles/PropertyDetail.css';
+import Footer from '../common/Footer';
 
 interface PropertyDetailProps {
   property: Property;
@@ -19,9 +20,11 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
     { icon: '🛋️', label: 'Furniture Type', text: property.furniture_type },
     { icon: '🏢', label: 'Flat Type', text: property.flat_type },
     { icon: '👥', label: 'Preferred Category', text: property.prefer_category },
+    { icon: '🏠', label: 'Property Type', text: property.property_type },
   ];
 
   return (
+    <>
     <div className="property-detail">
       <img src={property.image} alt={property.title} />
       <div>
@@ -41,6 +44,8 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
      
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

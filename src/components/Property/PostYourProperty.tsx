@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../../styles/PostYourProperty.css'
 import { Link } from 'react-router-dom';
+import Footer from '../common/Footer';
 
 
 interface Property {
@@ -197,6 +198,7 @@ const PostYourProperty: React.FC = () => {
       </form>
       
     </div>
+    <Footer/>
     </>
   );
 };

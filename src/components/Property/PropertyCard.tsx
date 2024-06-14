@@ -10,15 +10,29 @@ interface PropertyCardProps {
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   return (
-  <div >
-     <div className="property-card">
-        <img src={property.image} alt={property.title}/>
-        <p className='product-title'>{property.title}</p>
-        <p className='product-rent' ><b>Rent</b>${property.rent}/month</p>
-        <Link to={`/properties/${property.id}`} className='view-btn'>View Details</Link>
-      </div>
-  </div>
-     
+    <>
+
+
+<div className="property-card">
+
+<div className="image-container">
+  <img src={property.image} alt={property.title} />
+  <span className="property-type-tag">{property.property_type}</span>
+</div>
+<p className='product-title'>{property.title}</p>
+<p className='product-rent' ><b>Rent</b>${property.rent}/month</p>
+<Link to={`/properties/${property.id}`} className='view-btn'>View Details</Link>
+</div>
+
+
+
+
+
+      
+
+</>
+
+
 
 
 

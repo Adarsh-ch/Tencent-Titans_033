@@ -1,7 +1,7 @@
 
- footer{
+footer{
     margin-top: 200px;
- }
+}
 .footer-upper-box {
   
     display: flex;
@@ -14,11 +14,12 @@
     width: fit-content;
     padding: 50px;
     margin: auto;
-    position: absolute; /* Positioning it absolutely */
-    top: 230%; /* Center vertically relative to .main-footer */
-     left: 18%;
-    /* transform: translate(-50%, -50%);  */
-    z-index: 1; 
+    position: relative;
+    top: 100px;
+
+    
+    
+   
 }
 
 .btn-get-intouch {
@@ -34,7 +35,7 @@
     background-color: #2F3531;
     height: 500px;
     width: 100%;
-    position: relative; /* Set the positioning context for .footer-upper-box */
+   
 }
 .main-footer div img{
     height: 100px;
@@ -43,24 +44,25 @@
 .main-footer div p{
     color: white;
 }
-.footer-log-section{
+.footer-logo-section{
     width: 400px;
 
 }
-.footer-log-section li{
+.footer-logo-section li{
     font-family: sans-serif;
     color: white;
     list-style: none;
+    line-height: 50px;
 }
-.footer-log-section hr{
+.footer-logo-section hr{
     color: white;
 }
-.footer-log-section i{
+.footer-logo-section i{
     color: white;
    
 }
-.footer-log-section div i{
-  font-size: 30px;
+.footer-logo-section div i{
+  font-size: 20px;
 
 }
 .icons-div{
@@ -96,11 +98,21 @@
     padding: 20px ;
     background-color: green;
     border: none;
+    color: white;
 
+}
+.footer-form button:hover{
+    background-color: rgb(1, 46, 7);
+  
 }
 .all-right-footer{
     text-align: center;
     font-family: sans-serif;
     background-color: rgb(88, 88, 88);
     color: white;
+}
+.footer-main-Container{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
 }
