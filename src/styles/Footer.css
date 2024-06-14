@@ -1,0 +1,106 @@
+
+ footer{
+    margin-top: 200px;
+ }
+.footer-upper-box {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    font-family: sans-serif;
+    color: white;
+    background-color: green;
+    width: fit-content;
+    padding: 50px;
+    margin: auto;
+    position: absolute; /* Positioning it absolutely */
+    top: 230%; /* Center vertically relative to .main-footer */
+     left: 18%;
+    /* transform: translate(-50%, -50%);  */
+    z-index: 1; 
+}
+
+.btn-get-intouch {
+    padding: 10px 30px;
+    font-family: sans-serif;
+    border: none;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2F3531;
+    height: 500px;
+    width: 100%;
+    position: relative; /* Set the positioning context for .footer-upper-box */
+}
+.main-footer div img{
+    height: 100px;
+    width: 100px;
+}
+.main-footer div p{
+    color: white;
+}
+.footer-log-section{
+    width: 400px;
+
+}
+.footer-log-section li{
+    font-family: sans-serif;
+    color: white;
+    list-style: none;
+}
+.footer-log-section hr{
+    color: white;
+}
+.footer-log-section i{
+    color: white;
+   
+}
+.footer-log-section div i{
+  font-size: 30px;
+
+}
+.icons-div{
+    display: flex;
+    gap: 30px;
+}
+.links-div li{
+    list-style: none;
+    color: white;
+}
+.links-div li a{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+  
+}
+.footer-form{
+    font-family: sans-serif;
+    color: white;
+   
+}
+.footer-form p{
+    
+    width: 400px;
+}
+
+.footer-form input{
+    padding: 20px ;
+    border: none;
+}
+.footer-form button{
+    padding: 20px ;
+    background-color: green;
+    border: none;
+
+}
+.all-right-footer{
+    text-align: center;
+    font-family: sans-serif;
+    background-color: rgb(88, 88, 88);
+    color: white;
+}
