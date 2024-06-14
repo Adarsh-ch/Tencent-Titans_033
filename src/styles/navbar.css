@@ -25,3 +25,23 @@ nav img{
     justify-content: space-between;
     padding-left:80px;
 }
+
+.nav-bar>div{
+    display: flex;
+    align-items: center;
+}
+
+.items{
+    position: relative;
+}
+
+.count{
+    font-size:12px;
+    background-color: red;
+    padding:0px 4px;
+    border-radius: 50%;
+    color:white;
+    position: absolute;
+    right:4px;
+    bottom:0px;
+}
