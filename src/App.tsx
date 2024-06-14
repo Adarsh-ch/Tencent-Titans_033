@@ -27,6 +27,8 @@ const App: React.FC = () => {
         <Route path="/user/dashboard" element={<UserDashboardPage />} />
         <Route path="/admin/*" element={<Admin />} />
 
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path='/postyourproperty' element={<PostYourProperty/>}/>
       </Routes>
       <Footer />
     </Router>
