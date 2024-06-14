@@ -1,17 +1,20 @@
-import React, { useRef, useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../services/firebase';
-import { Alert } from 'react-bootstrap';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useRef, useState } from 'react';
+import { Form, Button, Card, Alert } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const Login: React.FC = () => {
   const emailRef = useRef<HTMLInputElement>(null);
+  const [show, setShow] = useState<boolean>(false);
+  const [password, setPassword] = useState<string>('');
   const passwordRef = useRef<HTMLInputElement>(null);
-  const [error, setError] = useState<string>('');
+  const { login } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (event: React.FormEvent) => {
-    event.preventDefault();
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
 
     if (emailRef.current && passwordRef.current) {
       const email = emailRef.current.value;
@@ -19,31 +22,65 @@ const Login: React.FC = () => {
 
       try {
         setError('');
-        await signInWithEmailAndPassword(auth, email, password);
-        // Redirect or show success message
-        navigate('/')
-      } catch (error) {
-        // Handle error
-        setError('Failed to login');
+        setLoading(true);
+        await login(email, password);
+        navigate('/');
+      } catch {
+        setError('Failed to log in');
       }
+
+      setLoading(false);
     }
-  };
+  }
+
+  const handleClick = () => {
+    console.log('clicked');
+    signinWithGoogle();
+  }
 
   return (
     <>
-    {error && <Alert variant='danger'>{error}</Alert>}
-    <form onSubmit={handleLogin}>
-      <input type="email" ref={emailRef} placeholder="Email" required />
-      <input
-        type="password"
-        ref={passwordRef}
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
-    <NavLink to='/forgot-password'>Forgot Password?</NavLink>
-    <p>Need an account <NavLink to='/register'>Register</NavLink></p>
+      <Card className="shadow">
+        <Card.Body className="px-5 py-4">
+          <h2 className="text-center mb-4">Log In</h2>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <Form onSubmit={handleSubmit}>
+            <Form.Group id="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" ref={emailRef} required />
+            </Form.Group>
+            <Form.Group id="password">
+              <Form.Label>Password</Form.Label>
+              <div className="input-password">
+                <Form.Control
+                  type={show ? 'text' : 'password'}
+                  value={password}
+                  ref={passwordRef}
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                >
+                </Form.Control>
+                <span onClick={() => setShow((prev) => !prev)}>
+                  {show ? (
+                    <i className="fa-regular fa-eye-slash"></i>
+                  ) : (
+                    <i className="fa-regular fa-eye"></i>
+                  )}
+                </span>
+              </div>
+            </Form.Group>
+            <Button disabled={loading} className="w-100 my-3" type="submit">
+              Log In
+            </Button>
+          </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </div>
+        </Card.Body>
+      </Card>
+      <div className="w-100 text-center mt-2">
+        Need an account? <Link to="/register">Sign Up</Link>
+      </div>
     </>
   );
 };

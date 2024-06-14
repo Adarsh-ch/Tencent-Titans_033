@@ -1,14 +1,11 @@
 import React from 'react';
 import SearchBar from '../components/common/SearchBar';
-import { useAuth } from '../context/AuthContext';
 import '../styles/Home.css'
-
+import Home_1 from '../assets/Images/House-1.jpeg'
+import Home_2 from '../assets/Images/House-2.jpeg'
 const Home: React.FC = () => {
-  const {currentUser} = useAuth();
 
   return <div className='container-H'>
-    Welcome to Real Estate App
-    <p>{currentUser?.email}</p>
     <div className='container-H-image'>
     {/* <div className="overlay"></div> */}
     <div className="text-content">
@@ -28,27 +25,28 @@ const Home: React.FC = () => {
            </div>
     </div>
    
-     <SearchBar />
+     {/* <SearchBar /> */}
     {/* About us section  */}
     <div className='About-section'>
        <div className='About-section-1'>
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <img src={Home_1} alt="" />
+        <img src={Home_2} alt="" />
        </div>
        <div className='About-section-2'>
-        <span><h4>About us</h4></span>
+        <h4>About us</h4>
         <h1>The Leading Real Estate Rental Marketplace.</h1>
         <p>Over 39,000 people work for us in more than 70 countries all over the This breadth of global coverage, combined with specialist services</p>
         <div className='About-section-2-inner'>
-        <div><span>Smart Home Design</span> <span>Exceptional Lifestyle</span></div>
-        <div><span>Beautiful Scene Around</span> <span>Complete 24/7 Security</span></div>
+        <div><span><span className="material-symbols-outlined">home</span>Smart Home Design</span> <span><span className="material-symbols-outlined">fitness_center</span>Exceptional Lifestyle</span></div>
+        <div><span><span className="material-symbols-outlined">health_and_beauty</span>Beautiful Scene Around</span> <span><span className="material-symbols-outlined">24mp</span>Complete 24/7 Security</span></div>
         </div>
-        <div>
+        <div className='Alert-section'>
           <p>"Enimad minim veniam quis nostrud exercitation llamco laboris. Lorem ipsum dolor sit amet"</p>
         </div>
         <button>OUR SERVICES</button>
        </div>
     </div>
+    {/* About section ends */}
    
   </div>;
 };
