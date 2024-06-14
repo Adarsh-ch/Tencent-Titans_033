@@ -25,7 +25,7 @@ const Home: React.FC = () => {
            </div>
     </div>
    
-     {/* <SearchBar /> */}
+     <SearchBar />
     {/* About us section  */}
     <div className='About-section'>
        <div className='About-section-1'>
