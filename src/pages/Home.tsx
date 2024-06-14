@@ -1,14 +1,10 @@
 import React from 'react';
 import SearchBar from '../components/common/SearchBar';
-import { useAuth } from '../context/AuthContext';
 import '../styles/Home.css'
 
 const Home: React.FC = () => {
-  const {currentUser} = useAuth();
 
   return <div className='container-H'>
-    Welcome to Real Estate App
-    <p>{currentUser?.email}</p>
     <div className='container-H-image'>
     {/* <div className="overlay"></div> */}
     <div className="text-content">
