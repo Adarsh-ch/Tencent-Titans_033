@@ -1,8 +1,8 @@
 .property-card {
-    height: 400px;
+    height: 450px;
     width: 300px;
     border: 1px solid rgb(189, 189, 189);
-    text-align: center;
+    text-align: start;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
    
@@ -40,7 +40,7 @@
     border: none;
     text-decoration: none;
     font-family: sans-serif;
-   
+  
 
 }
 
@@ -48,14 +48,16 @@
     font-family: sans-serif;
     color: rgb(90, 89, 89);
     margin-top: 10px;
+    padding: 0 15px;
 
 
 }
 
-.product-rent {
+.product-location {
     font-family: sans-serif;
     color: rgb(90, 89, 89);
     font-weight: bolder;
+    padding: 0 15px;
 
 
 }
@@ -88,9 +90,8 @@
     margin-left: 10px;
     
 }
+.input-box label{
 
-.input-box p{
-    margin-top: 10px;
     font-family: sans-serif;
     
 }
@@ -137,4 +138,20 @@
     border-radius:50%;
     border:1px solid grey;
     background-color: white;
+}
+.type{
+    display: flex;
+    justify-content: start;
+    gap: 8px;
+    padding: 0 15px;
+}
+.icons-type{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    padding: 15px;
+}
+.icons-type i{
+    background-color: rgb(220, 241, 241);
+    padding: 8px;
 }
