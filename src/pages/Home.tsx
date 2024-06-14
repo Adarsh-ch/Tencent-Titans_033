@@ -4,6 +4,11 @@ import '../styles/Home.css'
 import Home_1 from '../assets/Images/House-1.jpeg'
 import Home_2 from '../assets/Images/House-2.jpeg'
 import Footer from '../components/common/Footer';
+import service_icon_1 from '../../src/assets/Images/service_icon_1.png'
+import service_icon_2 from '../../src/assets/Images/service_icon_2.png'
+import service_icon_3 from '../../src/assets/Images/service_icon_3.png'
+import sketch from '../../src/assets/Images/sketch.png'
+
 const Home: React.FC = () => {
 
   return <><div className='container-H'>
@@ -50,8 +55,42 @@ const Home: React.FC = () => {
     </div>
     {/* About section ends */}
    
+  </div>;
+
+  {/* Our services section starts */}
+  <div className='our-services'>
+    <p>Our Services</p>
+    <h1>Our Main focus</h1>
+    <div className='services-box'>
+    <div className='box-box'>
+    <img src={service_icon_1} alt="" />
+      <h2>Buy A Home</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat non ipsam deleniti, ipsa doloribus perferendis.</p>
+      <p>Find A Home<i className="fa-solid fa-arrow-right"></i> </p>
+    </div>
+    <div className='box-box'>
+    <img src={service_icon_2} alt="" />
+    <h2>Rent A Home</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat non ipsam deleniti, ipsa doloribus perferendis.</p>
+    <p>Find A Home <i className="fa-solid fa-arrow-right"></i></p>
+    </div>
+    <div className='box-box'>
+    <img src={service_icon_3} alt="" />
+    <h2>Sell A Home</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat non ipsam deleniti, ipsa doloribus perferendis.</p>
+    <p>Find A Home <i className="fa-solid fa-arrow-right"></i></p>
+    </div>
+    </div>
+   
+
   </div>
-  <Footer />
+    {/* Our services section ends */}
+
+   
+
+
+
+  <Footer/>
   </>
 };
 
