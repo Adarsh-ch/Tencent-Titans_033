@@ -63,14 +63,14 @@
 .property-list {
     display: flex;
     flex-wrap: wrap;
-   
+ 
     gap: 20px;
     justify-content: center;
 }
 .filter-section{
     height: 300px;
      width: fit-content;
-     margin-left: 50px;
+    margin-left: 50px;
    
     display: flex;
     justify-content: space-around;
