@@ -7,8 +7,21 @@ nav{
     max-width: 1440px;
     margin: auto;
     height: 100px;
-    border-bottom: 0.5px solid gray;
+    /* border-bottom: 0.5px solid gray; */
 }
+
 nav img{
     width: 166px;
+}
+
+.nav-bar>div>a{
+    text-decoration: none;
+    color:black;
+    margin:0px 15px;
+}
+
+.nav-bar{
+    display:flex;
+    justify-content: space-between;
+    padding-left:80px;
 }

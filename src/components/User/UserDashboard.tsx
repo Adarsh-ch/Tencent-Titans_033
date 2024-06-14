@@ -1,7 +1,19 @@
 import React from 'react';
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const UserDashboard: React.FC = () => {
-  return <div>User Dashboard</div>;
+  const {logout} = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/');
+  }
+
+  return <div style={{minHeight:'100vh'}}>User Dashboard
+    <button onClick={handleSignOut}>Sign Out</button>
+  </div>;
 };
 
 export default UserDashboard;
