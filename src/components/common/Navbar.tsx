@@ -15,6 +15,7 @@ const Navbar: React.FC = () => {
       {currentUser ? <Link to='/user/dashboard'>User</Link> : <><Link to='/login'>Login</Link>
         <Link to='/register'>Sign Up</Link></>}
       <Link to={"/postyourproperty"}>Post Your Property</Link>
+      <Link to='/admin'>Admin</Link>
     </nav>
   );
 };
