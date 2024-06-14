@@ -4,7 +4,7 @@ import '../../styles/Footer.css'
 const Footer: React.FC = () => {
   return <footer>
 
-    <div>
+    <div className='footer-main-Container'>
       <div className='footer-upper-box'>
         <div>
           <h1>Looking for your dream home?</h1>
@@ -35,8 +35,8 @@ const Footer: React.FC = () => {
           <p>Company</p>
           <li><i class="fa-solid fa-arrow-right"></i><a href='#'> Home</a></li>
           <li><i class="fa-solid fa-arrow-right"></i><a href='#'> Properties</a></li>
-          <li><i class="fa-solid fa-arrow-right"></i><a href='#'> About</a></li>
-          <li><i class="fa-solid fa-arrow-right"></i><a href='#'> Services</a></li>
+  
+          
           <li><i class="fa-solid fa-arrow-right"></i><a href='#'> Post Your Property</a></li>
         </div>
         <div className='footer-form'>

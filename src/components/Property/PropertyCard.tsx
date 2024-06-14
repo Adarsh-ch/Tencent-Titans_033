@@ -23,6 +23,13 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
 <p className='product-rent' ><b>Rent</b>${property.rent}/month</p>
 <Link to={`/properties/${property.id}`} className='view-btn'>View Details</Link>
 </div>
+
+
+
+
+
+      
+
 </>
 
 

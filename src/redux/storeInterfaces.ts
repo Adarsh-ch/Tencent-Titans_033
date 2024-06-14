@@ -6,6 +6,9 @@ export interface FilterState {
     propertyType:string;
     flatType: string;
     category: string;
+    page:number;
+    limit:number;
+    prev:number;
   }
   
   export interface Action {
