@@ -11,6 +11,7 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_APP_FIREBASE_APP_ID
 };
 
+
 const app = initializeApp(firebaseConfig);
 
 // Access the 'auth' service directly

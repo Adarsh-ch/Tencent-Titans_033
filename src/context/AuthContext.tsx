@@ -1,17 +1,19 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from '../services/firebase';
+import { auth, provider } from '../services/firebase';
 import {
   User,
   UserCredential,
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
   updateEmail as updateFirebaseEmail,
   updatePassword as updateFirebasePassword,
 } from 'firebase/auth';
 
 interface AuthContextProps {
   currentUser: User | null;
+  signinWithGoogle: () => Promise<UserCredential>
   signup: (email: string, password: string) => Promise<UserCredential>;
   login: (email: string, password: string) => Promise<UserCredential>;
   logout: () => Promise<void>;
@@ -35,6 +37,8 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   // const [loading, setLoading] = useState<boolean>(true);
+
+  const signinWithGoogle = () => signInWithPopup(auth,provider);
 
   function signup(email: string, password: string) {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -71,6 +75,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const value = {
     currentUser,
+    signinWithGoogle,
     login,
     signup,
     logout,
