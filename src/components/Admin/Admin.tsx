@@ -8,7 +8,7 @@ import { Sidebar } from './Sidebar'
 import { UserProfiles } from './UserProfiles'
 import { SupportDisputes } from './SupportDisputes'
 
-export const Admin = () => {
+const Admin = () => {
   return (
     <ChakraProvider>
       <ThemeProvider>
@@ -31,3 +31,5 @@ export const Admin = () => {
     </ChakraProvider>
   )
 }
+
+export default Admin;

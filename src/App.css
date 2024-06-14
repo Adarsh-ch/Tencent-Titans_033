@@ -30,6 +30,10 @@ nav {
   color:rgb(72,176,145);
 }
 
+.dropdown-menu>li>a:active{
+  background-color:white !important;
+}
+
 .dropdown-menu>li>button:hover {
   color:rgb(72,176,145);
 }

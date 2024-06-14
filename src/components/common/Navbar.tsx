@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../../styles/navbar.css';
 import logo from '../../assets/Images/logo.png';
 import { useAuth } from '../../context/AuthContext';
@@ -58,17 +58,17 @@ const Navbar: React.FC = () => {
             >
               <i className="fa-regular fa-circle-user fs-3"></i>
             </button>
-            <ul className="dropdown-menu dropdown-menu-lg-end">
+            <ul className="dropdown-menu dropdown-menu-lg-end ">
               <li>
-                <a className="dropdown-item" href="/user/dashboard">
+                <Link className="dropdown-item" to="/user/dashboard" >
                   Profile
-                </a>
+                </Link>
               </li>
               <hr />
               <li>
-                <a className="dropdown-item" href="/user/dashboard">
+                <Link className="dropdown-item" to="/user/dashboard" >
                   Your Properties
-                </a>
+                </Link>
               </li>
               <hr />
               <li>
