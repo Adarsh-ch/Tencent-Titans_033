@@ -1,7 +1,7 @@
 
   
 
-
+{
   "properties": [
       {
         "id": "1",
@@ -113,7 +113,7 @@
         "property_type": "Sell",
         "flat_type": "1 BHK",
         "prefer_category": "Any",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-8.jpg"
+        "image": "https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=0&k=20&c=iZ561ZIXOtPYGSzqlKUnLrliorreOYVz1pzu8WJmrnc="
       },
       {
         "id": "9",
@@ -127,7 +127,7 @@
         "property_type": "Rent",
         "flat_type": "3 BHK",
         "prefer_category": "Family",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-9.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVRS4-Q3_qHAT3k6enJk-tGwWrcEgMJWRBdvCAX8QR2XjVKYvwdoO0s3VKRGosfL12fOY&usqp=CAU"
       },
       {
         "id": "10",
@@ -141,7 +141,7 @@
         "property_type": "Sell",
         "flat_type": "2 BHK",
         "prefer_category": "Female",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-10.jpg"
+        "image": "https://www.contemporist.com/wp-content/uploads/2018/05/modern-small-apartment-interior-design-130518-1103-01-800x536.jpg"
       },
       {
         "id": "11",
@@ -155,7 +155,7 @@
         "property_type": "Rent",
         "flat_type": "Studio",
         "prefer_category": "Any",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-11.jpg"
+        "image": "https://i.pinimg.com/736x/8f/0d/8d/8f0d8d791af4e08a0d7b4a071f64239f.jpg"
       },
       {
         "id": "12",
@@ -169,7 +169,7 @@
         "property_type": "Sell",
         "flat_type": "3 BHK",
         "prefer_category": "Family, Female",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-12.jpg"
+        "image": "https://www.contemporist.com/wp-content/uploads/2019/10/modern-apartment-design-hidden-lighting-111019-1249-01-800x408.jpg"
       },
       {
         "id": "13",
@@ -183,7 +183,7 @@
         "property_type": "Rent",
         "flat_type": "2 BHK",
         "prefer_category": "Family",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-13.jpg"
+        "image": "https://images.adsttc.com/media/images/5be3/3bc4/08a5/e549/e300/031a/newsletter/42449.jpg?1541618579"
       },
       {
         "id": "14",
@@ -197,7 +197,7 @@
         "property_type": "Sell",
         "flat_type": "1 BHK",
         "prefer_category": "Any",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-14.jpg"
+        "image": "https://cdn.mos.cms.futurecdn.net/jGggmwPHncRNy6B5BTvipD-1200-80.jpg"
       },
       {
         "id": "15",
@@ -211,7 +211,7 @@
         "property_type": "Rent",
         "flat_type": "3 BHK",
         "prefer_category": "Family",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-15.jpg"
+        "image": "https://weadesign.com/wp-content/uploads/2024/02/apartment-interior-design.webp"
       },
       {
         "id": "16",
@@ -225,7 +225,7 @@
         "property_type": "Sell",
         "flat_type": "2 BHK",
         "prefer_category": "Family",
-        "image": "https://ahmedelsewailky.github.io/estateX/images/image-16.jpg"
+        "image": "https://s3-ap-southeast-1.amazonaws.com/atap-main/gallery-full/f6a5ab86-1bc3-4a63-834d-570e3d21b79d/studio-design.jpg"
       }
   ],
   "listing": [],
