@@ -10,7 +10,7 @@ import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 // import SearchBar from './components/common/SearchBar';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
-import AdminDashboard from './components/Admin/AdminDashboard';
+import  { Admin } from './components/Admin/Admin';
 
 const App: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const App: React.FC = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/user/dashboard" element={<UserDashboardPage />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/*" element={<Admin />} />
 
       </Routes>
       <Footer />
