@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import { SET_CATEGORY, SET_FLAT_TYPE, SET_LOCATION, SET_PROPERTY_TYPE } from '../../redux/actionTypes';
+import React from 'react';
+import { useDispatch} from 'react-redux';
+
+import { SET_CATEGORY, SET_LOCATION, SET_PROPERTY_TYPE } from '../../redux/actionTypes';
+import { useNavigate } from 'react-router-dom';
 
 const SearchBar: React.FC = () => {
   const dispatch = useDispatch();
-  const filter = useSelector((store : RootState)=> store.filter);
+  const navigate = useNavigate();
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
@@ -37,7 +38,7 @@ const SearchBar: React.FC = () => {
         <option value="Couple">Couple</option>
         <option value="Female">Female</option>
       </select>
-      <button type="submit" style={{height:'50px',border:'none',padding:'8px 32px',backgroundColor:'green',color:'white',alignItems:'center',borderRadius:'6px'}}>FIND NOW</button>
+      <button type="submit" style={{height:'50px',border:'none',padding:'8px 32px',backgroundColor:'green',color:'white',alignItems:'center',borderRadius:'6px'}}onClick={()=>navigate('/properties')}>FIND NOW</button>
     </form>
   );
 };
