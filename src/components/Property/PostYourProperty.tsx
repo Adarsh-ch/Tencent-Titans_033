@@ -11,9 +11,10 @@ interface Property {
   rent: number;
   maintenance: string;
   area: number;
-  furnitureType: 'Semi Furnished' | 'Fully Furnished' | 'Unfurnished';
-  flatType: '1 RK' | '1 BHK' | '2 BHK' | '3 BHK' | '4 BHK';
-  preferCategory: 'Bachelor' | 'Couple' | 'Family';
+  furniture_type: 'Semi Furnished' | 'Fully Furnished' | 'Unfurnished';
+  property_type:'Rent'|'Sell';
+  flat_type: '1 RK' | '1 BHK' | '2 BHK' | '3 BHK' | '4 BHK'|'Any';
+  prefer_category: 'Bachelor' | 'Couple' | 'Family';
   image: string;
 }
 
@@ -25,9 +26,10 @@ const PostYourProperty: React.FC = () => {
     rent: 0,
     maintenance: '',
     area: 0,
-    furnitureType: 'Semi Furnished',
-    flatType: '1 RK',
-    preferCategory: 'Bachelor',
+    furniture_type: 'Semi Furnished',
+    property_type:'Rent',
+    flat_type: '1 RK',
+    prefer_category: 'Bachelor',
     image: '',
   });
 
@@ -136,7 +138,7 @@ const PostYourProperty: React.FC = () => {
           <label>Furniture Type:</label>
           <select
             name="furnitureType"
-            value={property.furnitureType}
+            value={property.furniture_type}
             onChange={handleChange}
             required
           >
@@ -146,10 +148,17 @@ const PostYourProperty: React.FC = () => {
           </select>
         </div>
         <div>
+          <label>Property Type</label>
+          <select name="property_type" value={property.property_type} onChange={handleChange} required>
+          <option value="Rent">Rent</option>
+          <option value="Sell">Sell</option>
+          </select>
+        </div>
+        <div>
           <label>Flat Type:</label>
           <select
             name="flatType"
-            value={property.flatType}
+            value={property.flat_type}
             onChange={handleChange}
             required
           >
@@ -158,13 +167,14 @@ const PostYourProperty: React.FC = () => {
             <option value="2 BHK">2 BHK</option>
             <option value="3 BHK">3 BHK</option>
             <option value="4 BHK">4 BHK</option>
+            <option value="Any">Any</option>
           </select>
         </div>
         <div>
           <label>Preferred Category:</label>
           <select
             name="preferCategory"
-            value={property.preferCategory}
+            value={property.prefer_category}
             onChange={handleChange}
             required
           >
