@@ -14,10 +14,11 @@ footer{
     width: fit-content;
     padding: 50px;
     margin: auto;
-    position: absolute;
-    z-index: 1;
-     margin-top: -150px;
-    left: 20%;
+    position: relative;
+    top: 100px;
+
+    
+    
    
 }
 
@@ -109,4 +110,9 @@ footer{
     font-family: sans-serif;
     background-color: rgb(88, 88, 88);
     color: white;
+}
+.footer-main-Container{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
 }

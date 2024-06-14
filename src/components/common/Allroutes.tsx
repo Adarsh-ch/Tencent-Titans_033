@@ -22,6 +22,7 @@ const Allroutes = () => {
         <Route path="/admin" element={<AdminPage />} />
         <Route path='/postyourproperty' element={<PostYourProperty/>} />
       </Routes>
+     
   )
 }
 
