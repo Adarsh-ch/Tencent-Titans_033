@@ -63,19 +63,26 @@
 .property-list {
     display: flex;
     flex-wrap: wrap;
-   
+ 
     gap: 20px;
     justify-content: center;
+  
+    width: 75%;
 }
 .filter-section{
-    height: 300px;
-     width: fit-content;
-     margin-left: 50px;
+    height: fit-content;
+     width: 25%;
+     border: 1px solid rgb(170, 167, 167);
+     background-color: #F8FAFC;
+  
+
    
+ 
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+   padding: 20px;
     gap: 50px;
+    
    
 }
 .input-box{
@@ -111,4 +118,13 @@
 }
 .funiture-type{
     border-left:  1px solid green;
+}
+.main-container{
+    display: flex;
+  
+ 
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 30px;
 }

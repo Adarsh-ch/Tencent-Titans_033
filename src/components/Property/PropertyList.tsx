@@ -32,6 +32,8 @@ const PropertyList: React.FC = () => {
 
   return (
     <>
+    <div className='main-container'>
+    
       <div className='filter-section'>
         <div className='property-type'>
           <p className='type-heading'>Property-Type</p>
@@ -114,7 +116,8 @@ const PropertyList: React.FC = () => {
 
         </div>
       </div>
-      <hr></hr>
+   
+   
 
 
 
@@ -125,6 +128,7 @@ const PropertyList: React.FC = () => {
           <PropertyCard key={property.id} property={property} />
         ))}
 
+      </div>
       </div>
     </>
   );
