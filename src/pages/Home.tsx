@@ -3,9 +3,10 @@ import SearchBar from '../components/common/SearchBar';
 import '../styles/Home.css'
 import Home_1 from '../assets/Images/House-1.jpeg'
 import Home_2 from '../assets/Images/House-2.jpeg'
+import Footer from '../components/common/Footer';
 const Home: React.FC = () => {
 
-  return <div className='container-H'>
+  return <><div className='container-H'>
     <div className='container-H-image'>
     {/* <div className="overlay"></div> */}
     <div className="text-content">
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
            </div>
     </div>
    
-     {/* <SearchBar /> */}
+     <SearchBar />
     {/* About us section  */}
     <div className='About-section'>
        <div className='About-section-1'>
@@ -48,7 +49,9 @@ const Home: React.FC = () => {
     </div>
     {/* About section ends */}
    
-  </div>;
+  </div>
+  <Footer />
+  </>
 };
 
 export default Home;

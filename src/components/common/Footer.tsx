@@ -4,8 +4,6 @@ import '../../styles/Footer.css'
 const Footer: React.FC = () => {
   return <footer>
 
-
-
     <div>
       <div className='footer-upper-box'>
         <div>
