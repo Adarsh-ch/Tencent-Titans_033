@@ -7,8 +7,7 @@ const Home: React.FC = () => {
   const {currentUser} = useAuth();
 
   return <div className='container-H'>
-    Welcome to Real Estate App
-    <p>{currentUser?.email}</p>
+    {/* <p>{currentUser?.email}</p> */}
     <div className='container-H-image'>
     {/* <div className="overlay"></div> */}
     <div className="text-content">
