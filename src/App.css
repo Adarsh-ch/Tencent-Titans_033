@@ -25,3 +25,21 @@ nav {
   cursor:pointer;
   font-size: 13px;
 }
+
+.dropdown-menu>li>a:hover{
+  color:rgb(72,176,145);
+}
+
+.dropdown-menu>li>button:hover {
+  color:rgb(72,176,145);
+}
+
+.dropdown-menu>hr{
+  margin:0;
+  padding:2px;
+}
+
+.dropdown>button{
+  border:none;
+  outline:none;
+}
