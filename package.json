@@ -11,6 +11,7 @@
     "start": "json-server --watch server/db.json --port 5001"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",

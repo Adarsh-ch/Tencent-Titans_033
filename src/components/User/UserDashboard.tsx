@@ -7,11 +7,11 @@ const UserDashboard: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSignOut = () => {
-     logout();
-     navigate('/');
+    logout();
+    navigate('/');
   }
 
-  return <div>User Dashboard
+  return <div style={{minHeight:'100vh'}}>User Dashboard
     <button onClick={handleSignOut}>Sign Out</button>
   </div>;
 };
