@@ -4,10 +4,9 @@ import { useEffect, useState } from 'react'
 import Dashboard from './Dashboard'
 import PropertyAnalytics from './PropertyAnalytics'
 import { ThemeProvider } from './Theme/ThemeContext'
-import { Topbar } from './Topbar'
 import { Sidebar } from './Sidebar'
 import UserProfiles from './UserProfiles'
-import { SupportDisputes } from './SupportDisputes'
+import  SupportDisputes  from './SupportDisputes'
 
 export const AdminPage = () => {
   const [properties, setProperties] = useState([]);
@@ -48,7 +47,6 @@ export const AdminPage = () => {
     return (
       <ChakraProvider>
         <ThemeProvider>
-          <Topbar />
           <Flex justifyContent="center" alignItems="center" height="100vh">
             <Spinner size="xl" />
           </Flex>
@@ -58,10 +56,9 @@ export const AdminPage = () => {
   }
 
   return (
-    <div style={{maxWidth:"1520px",margin:"auto",padding:"30px"}} >
+    <div style={{maxWidth:"1520px",margin:"auto"}} >
     <ChakraProvider>
       <ThemeProvider>
-        <Topbar />
         <Flex>
           <Box w="20%">
             <Sidebar />

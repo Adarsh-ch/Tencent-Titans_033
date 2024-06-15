@@ -36,6 +36,7 @@ import {
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faBuilding, faHouseFlag, faPieChart, faBarChart } from '@fortawesome/free-solid-svg-icons';
   import './admin.css';
+import { Topbar } from './Topbar';
   
   const PropertyAnalytics = ({ properties }: any) => {
     const { theme } = useTheme();
@@ -94,6 +95,8 @@ import {
     };
   
     return (
+        <>
+        <Topbar />
         <Box bgColor={theme.colors.background} color={theme.colors.primary} p={5}>
             <VStack spacing={5} align="stretch">
                 <SimpleGrid columns={{ base: 1, md: 3 }} spacing={7}>
@@ -310,6 +313,7 @@ import {
                 </ModalContent>
             </Modal>
         </Box>
+        </>
     );
   };
   
