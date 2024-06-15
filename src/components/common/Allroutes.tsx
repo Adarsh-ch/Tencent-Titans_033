@@ -6,7 +6,7 @@ import LoginPage from '../../pages/LoginPage'
 import RegisterPage from '../../pages/RegisterPage'
 import ForgotPasswordPage from '../../pages/ForgotPasswordPage'
 import UserDashboardPage from '../../pages/UserDashboardPage'
-import AdminPage from '../../pages/AdminPage'
+import {AdminPage} from '../Admin/AdminPage';
 import PostYourProperty from '../Property/PostYourProperty'
 
 const Allroutes = () => {
@@ -19,7 +19,7 @@ const Allroutes = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/user/dashboard" element={<UserDashboardPage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/*" element={<AdminPage />} />
         <Route path='/postyourproperty' element={<PostYourProperty/>} />
       </Routes>
      
