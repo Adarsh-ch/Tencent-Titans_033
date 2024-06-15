@@ -1,24 +1,29 @@
-import { Box,Flex,Text} from '@chakra-ui/react'
-import { MoonIcon,SettingsIcon,SunIcon } from '@chakra-ui/icons'
+import {Flex,Text} from '@chakra-ui/react'
 import { useTheme } from './Theme/ThemeContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faGear, faInfoCircle, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion } from '@fortawesome/free-solid-svg-icons/faCircleQuestion';
 
 export const Topbar = () => {
     const { theme, toggleTheme, themeMode } = useTheme();
 
   return (
-    <Flex justifyContent="space-around" bgColor={theme.colors.background}>
+    <Flex justifyContent="space-between" bgColor={theme.colors.background}>
         <Text color={theme.colors.primary}>Estate</Text>
         <Text color={theme.colors.primary}>Admin</Text>
-        <Box>
+        <Flex width={150} justifyContent="space-evenly" gap={5}>
             {
                 themeMode === 'light' 
                 ? 
-                <MoonIcon boxSize={6} onClick={toggleTheme} /> 
+                <FontAwesomeIcon icon={faMoon} onClick={toggleTheme} /> 
                 : 
-                <SunIcon boxSize={6} onClick={toggleTheme} />
+                <FontAwesomeIcon icon={faSun} onClick={toggleTheme} />
             }
-            <SettingsIcon mx={20} boxSize={6}/>
-        </Box>
+            <FontAwesomeIcon icon={faInfoCircle} />
+            <FontAwesomeIcon icon={faBell}/>
+            <FontAwesomeIcon icon={faCircleQuestion}/>
+            <FontAwesomeIcon icon={faGear} />
+        </Flex>
     </Flex>
   )
 }

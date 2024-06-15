@@ -24,7 +24,12 @@ const Login: React.FC = () => {
         setError('');
         setLoading(true);
         await login(email, password);
-        navigate('/');
+        if(email === 'admin@gmail.com'){
+          navigate('/admin')
+        }
+        else{
+          navigate('/');
+        }
       } catch {
         setError('Failed to log in');
       }
