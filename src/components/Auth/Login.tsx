@@ -33,7 +33,11 @@ const Login: React.FC = () => {
         setError('');
         setLoading(true);
         await login(email, password);
-        const user = users.filter(user => user.user_id==email);
+        if(email === 'admin@gmail.com'){
+          navigate('/admin')
+        }
+        else{
+          const user = users.filter(user => user.user_id==email);
         if(user.length==0){
          // console.log('new user')
           const newUser = {
@@ -45,6 +49,7 @@ const Login: React.FC = () => {
           axios.post(`http://localhost:5001/userProfiles`,newUser)
         }
         navigate('/');
+        }
       } catch {
         setError('Failed to log in');
       }
