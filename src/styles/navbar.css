@@ -36,12 +36,12 @@ nav img{
 }
 
 .count{
-    font-size:12px;
+    font-size:11px;
     background-color: red;
     padding:0px 4px;
     border-radius: 50%;
     color:white;
     position: absolute;
-    right:4px;
-    bottom:0px;
+    right:8px;
+    bottom:3px;
 }
