@@ -28,6 +28,9 @@ const Home: React.FC = () => {
     </div>
    
      <SearchBar />
+
+
+     
     {/* About us section  */}
     <div className='About-section'>
        <div className='About-section-1'>
@@ -51,6 +54,7 @@ const Home: React.FC = () => {
     {/* About section ends */}
    
   </div>;
+
   <Footer/>
   </>
  
