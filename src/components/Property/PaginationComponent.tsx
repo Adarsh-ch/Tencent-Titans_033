@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchProperties } from '../../services/api';
+import { fetchData } from '../../services/api';
 import useQuery from '../../hooks/useQuery';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
@@ -24,7 +24,7 @@ const PaginationComponent = () => {
 
   useEffect(() => {
     const loadProperties = async () => {
-      const response = await fetchProperties(propertyString);
+      const response = await fetchData(propertyString);
       setCount(response.length);
     };
     loadProperties();

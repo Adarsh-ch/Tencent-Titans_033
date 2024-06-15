@@ -1,17 +1,26 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { UserProfile } from 'firebase/auth';
+import { fetchData } from '../../services/api';
+import axios from 'axios';
 
 const Login: React.FC = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const [show, setShow] = useState<boolean>(false);
   const [password, setPassword] = useState<string>('');
   const passwordRef = useRef<HTMLInputElement>(null);
+  const [users,setUsers] = useState<UserProfile[]>([]);
   const { login } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const loadUsers = async () => {
+    const response = await fetchData('/userProfiles');
+    setUsers(response);
+  };
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -24,6 +33,17 @@ const Login: React.FC = () => {
         setError('');
         setLoading(true);
         await login(email, password);
+        const user = users.filter(user => user.user_id==email);
+        if(user.length==0){
+         // console.log('new user')
+          const newUser = {
+           user_id:email,
+           user_listing:[],
+           user_wishlist:[]
+          };
+
+          axios.post(`http://localhost:5001/userProfiles`,newUser)
+        }
         navigate('/');
       } catch {
         setError('Failed to log in');
@@ -32,6 +52,10 @@ const Login: React.FC = () => {
       setLoading(false);
     }
   }
+
+  useEffect(()=>{
+    loadUsers();
+  },[])
 
   return (
     <>
