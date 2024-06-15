@@ -33,11 +33,6 @@ const Login: React.FC = () => {
     }
   }
 
-  const handleClick = () => {
-    console.log('clicked');
-    signinWithGoogle();
-  }
-
   return (
     <>
       <Card className="shadow">

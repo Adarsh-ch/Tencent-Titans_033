@@ -9,6 +9,7 @@ export interface Property {
     area: string;
     furniture_type: string;
     flat_type: string;
+    property_type: string;
     prefer_category: string;
   }
   
