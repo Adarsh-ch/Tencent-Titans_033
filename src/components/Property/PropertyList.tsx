@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchProperties } from '../../services/api';
+import { fetchData} from '../../services/api';
 import PropertyCard from './PropertyCard';
 import { Property } from '../../types';
 import '../../styles/Properties.css';
@@ -15,7 +15,7 @@ const PropertyList: React.FC = () => {
 
   useEffect(() => {
     const loadProperties = async () => {
-      const response = await fetchProperties(queryString);
+      const response = await fetchData(queryString);
       setProperties(response);
     };
     loadProperties();

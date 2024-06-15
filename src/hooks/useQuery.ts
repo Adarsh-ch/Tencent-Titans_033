@@ -13,11 +13,11 @@ const useQuery = () => {
     queryParams.push(`prefer_category_like=${filter.category}`);
   if (filter.order) queryParams.push(`_sort=rent&_order=${filter.order}`);
 
-  const queryString = `?rent_lt=${filter.rent}&area_lt=${filter.area}&_limit=${
+  const queryString = `/properties?rent_lt=${filter.rent}&area_lt=${filter.area}&_limit=${
     filter.limit
   }&_page=${filter.page}&${queryParams.join('&')}`;
 
-  const propertyString = `?rent_lt=${filter.rent}&area_lt=${filter.area}&${queryParams.join('&')}`;
+  const propertyString = `/properties?rent_lt=${filter.rent}&area_lt=${filter.area}&${queryParams.join('&')}`;
 
   return {queryString,propertyString}
 };

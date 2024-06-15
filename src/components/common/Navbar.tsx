@@ -1,13 +1,26 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import '../../styles/navbar.css';
 import logo from '../../assets/Images/logo.png';
 import { useAuth } from '../../context/AuthContext';
+import { useWishlist } from '../../hooks/useWishList';
+import WishList from '../Property/WishList';
 
 const Navbar: React.FC = () => {
   const { currentUser } = useAuth();
-  // console.log(currentUser?.updateProfile,color='rgb(72,176,145)')
-  const {logout} = useAuth();
+  const { wishlist, fetchWishlist } = useWishlist(currentUser?.email);
+  const [wishlistCount, setWishlistCount] = useState(0);
+  const { logout } = useAuth();
+
+  useEffect(() => {
+    if (currentUser) {
+    fetchWishlist();
+    }
+  }, [currentUser,fetchWishlist]);
+
+  useEffect(() => {
+      setWishlistCount(wishlist.length);
+  }, [wishlist]);
 
   return (
     <nav className="nav-bar">
@@ -42,45 +55,81 @@ const Navbar: React.FC = () => {
               color: 'white',
               backgroundColor: 'green',
               border: 'none',
-              borderRadius:'2px',
+              borderRadius: '2px',
               padding: '4px 8px',
             }}
           >
             Post Your Property
           </button>
         </NavLink>
-        {currentUser ? (<>
-          <button className='fs-4 items' style={{border:'none',background:'none'}}><i className="fa-regular fa-bell"></i><span className='count'>{0}</span></button>
-          <div className="dropdown d-inline py-3">
+        {currentUser ? (
+          <>
             <button
-              className="btn dropdown"
+              className="btn items fs-5"
               type="button"
-              data-bs-display="static"
-              data-bs-toggle="dropdown"
-              aria-expanded="false" 
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+              style={{border:'none',background:'none'}}
             >
-              <i className="fa-regular fa-circle-user fs-3"></i>
+              <i className="fa-regular fa-bell"></i><span className='count '>{wishlistCount}</span>
             </button>
-            <ul className="dropdown-menu dropdown-menu-lg-end ">
-              <li>
-                <Link className="dropdown-item" to="/user/dashboard" >
-                  Profile
-                </Link>
-              </li>
-              <hr />
-              <li>
-                <Link className="dropdown-item" to="/user/dashboard" >
-                  Your Properties
-                </Link>
-              </li>
-              <hr />
-              <li>
-                <button className="btn dropdown-item" onClick={()=>logout()}>
-                  Sign Out
-                </button>
-              </li>
-            </ul>
-          </div>
+
+            <div
+              className="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel"
+            >
+              <div className="offcanvas-header">
+                <h5 className="offcanvas-title" id="offcanvasRightLabel">
+                  Your Wishlist
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="offcanvas-body">
+                <WishList />
+              </div>
+            </div>
+
+            <div className="dropdown d-inline py-3">
+              <button
+                className="btn dropdown"
+                type="button"
+                data-bs-display="static"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i className="fa-regular fa-circle-user fs-3"></i>
+              </button>
+              <ul className="dropdown-menu dropdown-menu-lg-end ">
+                <li>
+                  <Link className="dropdown-item" to="/user/dashboard">
+                    Profile
+                  </Link>
+                </li>
+                <hr />
+                <li>
+                  <Link className="dropdown-item" to="/user/dashboard">
+                    Your Properties
+                  </Link>
+                </li>
+                <hr />
+                <li>
+                  <button
+                    className="btn dropdown-item"
+                    onClick={() => logout()}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </ul>
+            </div>
           </>
         ) : (
           <>

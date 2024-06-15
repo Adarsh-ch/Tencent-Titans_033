@@ -1,95 +1,87 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { Property } from '../../types';
-// import '../../styles/Properties.css'
-
-
-// interface PropertyCardProps {
-//   property: Property;
-// }
-
-// const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
-//   return (
-//     <>
-
-
-// <div className="property-card">
-
-// <div className="image-container">
-//   <img src={property.image} alt={property.title} />
-//   <span className="property-type-tag">{property.property_type}</span>
-// </div>
-// <p className='product-title'>{property.title}</p>
-// <p className='product-location'><i class="fa-solid fa-location-dot"></i> {property.location}</p>
-// <div className='type'>
-//   <p><i class="fa-solid fa-house"></i> {property.flat_type}</p>
-//   <p><i class="fa-solid fa-chart-area"></i> {property.area}sqft</p>
-//   <p><i class="fa-solid fa-people-roof"></i>{property.prefer_category}</p>
-
-// </div>
-// <div className='icons-type'>
-// <i class="fa-solid fa-arrow-up-right-from-square"></i>
-// <i class="fa-regular fa-heart"></i>
-// <i class="fa-solid fa-link"></i>
-
-// </div>
-// <Link to={`/properties/${property.id}`} className='view-btn'>View Details</Link>
-// </div>
-
-
-
-
-
-      
-
-// </>
-
-
-
-
-
-
-
-
-
-
-//   );
-// };
-
-// export default PropertyCard;
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Property } from '../../types';
-import '../../styles/Properties.css'
+import '../../styles/Properties.css';
+import { useAuth } from '../../context/AuthContext';
+import { useWishlist } from '../../hooks/useWishList';
 
 interface PropertyCardProps {
   property: Property;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
+  const [isAdded, setIsAdded] = useState<boolean>(false);
+  const { currentUser } = useAuth();
+  const { wishlist,fetchWishlist, addToWishlist, removeFromWishlist } = useWishlist(
+    currentUser?.email
+  );
+  const navigate = useNavigate();
+
+  const handleClick = async () => {
+    if (!currentUser) {
+      navigate('/login');
+      return;
+    }
+
+    if (isAdded) {
+      removeFromWishlist(property.id);
+    } else {
+      addToWishlist(property);
+    }
+    setIsAdded(prev=>!prev);
+  };
+
+  useEffect(() => {
+    const fetchAndCheckWishlist = async () => {
+      await fetchWishlist();
+      if (currentUser) {
+        const isPropertyInWishlist = wishlist.some(
+          (item: Property) => item.id == property.id
+        );
+        console.log(isPropertyInWishlist,property)
+        setIsAdded(isPropertyInWishlist);
+      }
+    };
+
+    fetchAndCheckWishlist();
+  }, [ fetchWishlist,currentUser,property.id,isAdded]);
+
+
   return (
     <div className="property-card">
       <div className="image-container">
         <img src={property.image} alt={property.title} />
-        <span className="property-type-tag">{property.property_type}</span>
       </div>
-      <p className='product-title'>{property.title}</p>
-      <p className='product-location'><i className="fa-solid fa-location-dot"></i> {property.location}</p>
-      <div className='type'>
-        <p><i className="fa-solid fa-house"></i> {property.flat_type}</p>
-        <p><i className="fa-solid fa-chart-area"></i> {property.area} sqft</p>
-        <p><i className="fa-solid fa-people-roof"></i> {property.prefer_category}</p>
+      <p
+        className="text-success fs-6"
+        style={{ paddingLeft: '20px', margin: '0' }}
+      >
+        FOR {property.property_type.toLocaleUpperCase()}
+      </p>
+      <h3 className="product-title ">{property.title}</h3>
+      <p className="product-location">
+        <i className="fa-solid fa-location-dot" style={{ color: 'green' }}></i>{' '}
+        {property.location}
+      </p>
+      <div className="type">
+        <p> {property.flat_type}</p>
+        <p> {property.area} sqft</p>
+        <p> {property.prefer_category}</p>
       </div>
-      <div className='icons-type'>
-        <Link to={`/properties/${property.id}`}>
+      <div className="icons-type">
+        <button
+          onClick={() => navigate(`/properties/${property.id}`)}
+          title="Details"
+        >
           <i className="fa-solid fa-arrow-up-right-from-square"></i>
-        </Link>
-        <Link to={`/wishlist`}>
-          <i className="fa-regular fa-heart"></i>
-        </Link>
-        <Link to={`/properties/${property.id}`}>
-          <i className="fa-solid fa-link"></i>
-        </Link>
+        </button>
+        <button onClick={handleClick} title="wishlist">
+          {isAdded ? (
+            <i className="fa-solid fa-heart"></i>
+          ) : (
+            <i className="fa-regular fa-heart"></i>
+          )}
+        </button>
       </div>
     </div>
   );
