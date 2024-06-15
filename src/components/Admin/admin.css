@@ -31,3 +31,27 @@
   font-weight: 500;
   padding: 5px;
 }
+
+.custom-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  margin-left: 8px;
+}
+
+.chakra-modal__content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chakra-modal__body {
+  width: 100%;
+  height: 100%;
+}
