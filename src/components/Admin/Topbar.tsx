@@ -1,4 +1,4 @@
-import {Flex,Text} from '@chakra-ui/react'
+import {Flex} from '@chakra-ui/react'
 import { useTheme } from './Theme/ThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faGear, faInfoCircle, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
