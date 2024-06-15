@@ -13,3 +13,9 @@ export interface Property {
     prefer_category: string;
   }
   
+  export interface UserProfile{
+    id:string;
+    user_id:string;
+    user_listing: Property[];
+    user_wishlist: Property[];
+  }

@@ -17,7 +17,7 @@
 
 }
 
-.property-type-tag {
+/* .property-type-tag {
     position: absolute;
     margin-left: -80px;
     margin-top: 5px;
@@ -27,7 +27,7 @@
     padding: 5px 20px;
     font-family: sans-serif;
 
-}
+} */
 
 .property-card img:hover {
     transform: scale(1.09);
@@ -48,18 +48,15 @@
     font-family: sans-serif;
     color: rgb(90, 89, 89);
     margin-top: 10px;
-    padding: 0 15px;
-
-
+    padding: 0 20px;
+    font-weight: bolder;
+    font-size: 16px;
 }
 
 .product-location {
     font-family: sans-serif;
     color: rgb(90, 89, 89);
-    font-weight: bolder;
-    padding: 0 15px;
-
-
+    padding: 0 20px;
 }
 
 .property-list {
@@ -91,10 +88,9 @@
     
 }
 .input-box label{
-
-    font-family: sans-serif;
-    
+ font-family: sans-serif; 
 }
+
 .type-heading{
     font-family: sans-serif;
     font-weight: bold;
@@ -143,15 +139,27 @@
     display: flex;
     justify-content: start;
     gap: 8px;
-    padding: 0 15px;
+    padding: 0 20px;
 }
+
 .icons-type{
     display: flex;
     justify-content: start;
     gap: 10px;
-    padding: 15px;
+    padding:0px 20px;
 }
+
 .icons-type i{
-    background-color: rgb(220, 241, 241);
+    /* background-color: rgb(220, 241, 241); */
     padding: 8px;
+}
+
+.icons-type button{
+    border:1px solid rgb(241,245,249);
+    padding: 4px;
+    background-color: rgb(241,245,249);
+}
+
+.icons-type button:active{
+    border: 1px solid black;
 }
