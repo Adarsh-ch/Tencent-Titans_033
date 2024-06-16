@@ -5,6 +5,7 @@
     text-align: start;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+   
 }
 .property-card img {
     height: 250px;
@@ -42,10 +43,27 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+
   
 }
-
+/* .input-container{
+    display: flex;
+    justify-content: center;   
+    margin-top: 20px;
+}
+.input-container input {
+  width: 500px;
+  padding: 10px 0;
+}
+.input-container input:hover {
+    border: 1px solid green;
+  }
+.input-container button{
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 0 10px;
+} */
 .filter-section {
     width: 33%;
     border: 1px solid rgb(170, 167, 167);
@@ -154,6 +172,7 @@
 .icons-type button:active {
     border: 1px solid black;
 }
+
 
 @media (max-width: 640px) {
     .property-card {
