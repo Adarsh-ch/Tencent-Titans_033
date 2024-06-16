@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { SET_USER } from '../redux/actionTypes';
 import { fetchData } from '../services/api';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const currentUser = useSelector((store:RootState) => store.user);
