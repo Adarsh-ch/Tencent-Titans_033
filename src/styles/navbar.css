@@ -45,3 +45,43 @@ nav img{
     right:8px;
     bottom:3px;
 }
+
+@media (max-width: 640px) {
+    nav {
+        flex-direction: column; 
+        height: auto; 
+        padding: 10px; 
+    }
+
+    .nav-bar {
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        padding-left: 0; 
+        width: 100%; 
+    }
+
+    .nav-bar > div {
+        flex-direction: column; 
+        align-items: center; 
+        margin-bottom: 10px; 
+    }
+
+    .nav-bar > div > a {
+        margin: 5px 0; 
+    }
+
+    nav img {
+        width: 100px; 
+        margin-bottom: 10px;
+    }
+
+    .items {
+        margin-top: 10px; 
+    }
+
+    .count {
+        right: 5px; 
+        bottom: 0px; 
+    }
+}
