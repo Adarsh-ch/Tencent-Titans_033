@@ -13,6 +13,7 @@ import { memo, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBuilding, faUser, faHouseFlag, faGauge, faCity, faLandmark, faMagnifyingGlassChart, faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
 import './admin.css'
+import { Topbar } from './Topbar';
 
 const Dashboard = ({ properties, userProfiles }: any) => {
   const { theme } = useTheme();
@@ -44,6 +45,8 @@ const Dashboard = ({ properties, userProfiles }: any) => {
   }, [properties]);
 
   return (
+        <>
+        <Topbar />
       <Box bgColor={theme.colors.background} color={theme.colors.primary} p={5}>
           <VStack spacing={5} align="stretch">
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={7}>
@@ -114,6 +117,7 @@ const Dashboard = ({ properties, userProfiles }: any) => {
               </SimpleGrid>
           </VStack>
       </Box>
+      </>
   );
 };
 

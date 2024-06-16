@@ -7,6 +7,7 @@ export const lightTheme = extendTheme({
     primary: "#007C52",
     secondary: "#012D21",
     background: "#ffffff",
+    button:"#007C52",
     text: "#013220",
   },
   fonts: {
@@ -20,6 +21,7 @@ export const darkTheme = extendTheme({
     primary: "#013220",
     secondary: "#012D21",
     background: "#7f7f7f",
+    button:"#007C52",
     text: "#ffffff",
   },
   fonts: {
