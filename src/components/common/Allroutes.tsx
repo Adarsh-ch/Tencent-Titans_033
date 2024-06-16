@@ -12,6 +12,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useEffect } from 'react'
 import { SET_USER_ID } from '../../redux/actionTypes'
 import { useDispatch } from 'react-redux'
+import PrivateRoute from './PrivateRoute'
 
 const Allroutes = () => {
   const {currentUser} = useAuth();
@@ -32,7 +33,7 @@ const Allroutes = () => {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/user/dashboard" element={<UserDashboardPage />} />
         <Route path="/admin/*" element={<AdminPage />} />
-        <Route path='/postyourproperty' element={<PostYourProperty/>} />
+        <Route path='/postyourproperty' element={<PrivateRoute/>} />
       </Routes>
      
   )
