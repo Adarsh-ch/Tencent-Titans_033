@@ -319,6 +319,12 @@ body {
     color: white;
 }
 
+.our-services a{
+    text-decoration: none;
+    color: black;
+}
+
+
 
 @media(max-width:640px){
     .services-box {
@@ -334,6 +340,7 @@ body {
     }
 
 }
+
 
 /* Our services ends */
 .Our-aminities {
@@ -460,6 +467,7 @@ body {
  
 
 }
+
 @media (max-width: 640px) {
     #carouselExampleAutoplaying {
         margin-top: 50px; 

@@ -8,6 +8,7 @@ import service_icon_1 from '../../src/assets/Images/service_icon_1.png'
 import service_icon_2 from '../../src/assets/Images/service_icon_2.png'
 import service_icon_3 from '../../src/assets/Images/service_icon_3.png'
 import sketch from '../../src/assets/Images/sketch.png'
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
 
@@ -67,18 +68,22 @@ const Home: React.FC = () => {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat non ipsam deleniti, ipsa doloribus perferendis.</p>
           <p>Find A Home<i className="fa-solid fa-arrow-right"></i> </p>
         </div>
+        <Link to={'/properties'}>
         <div className='box-box'>
           <img src={service_icon_2} alt="" />
           <h2>Rent A Home</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat non ipsam deleniti, ipsa doloribus perferendis.</p>
           <p>Find A Home <i className="fa-solid fa-arrow-right"></i></p>
         </div>
+        </Link>
+        <Link to={"/postyourproperty"}>
         <div className='box-box'>
           <img src={service_icon_3} alt="" />
           <h2>Sell A Home</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat non ipsam deleniti, ipsa doloribus perferendis.</p>
           <p>Find A Home <i className="fa-solid fa-arrow-right"></i></p>
         </div>
+        </Link>
       </div>
 
 
