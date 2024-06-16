@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SearchBar from '../components/common/SearchBar';
 import '../styles/Home.css'
 import Home_1 from '../assets/Images/House-1.jpeg'
@@ -8,9 +8,24 @@ import service_icon_1 from '../../src/assets/Images/service_icon_1.png'
 import service_icon_2 from '../../src/assets/Images/service_icon_2.png'
 import service_icon_3 from '../../src/assets/Images/service_icon_3.png'
 import sketch from '../../src/assets/Images/sketch.png'
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
+import { SET_USER } from '../redux/actionTypes';
+import { fetchData } from '../services/api';
 
 const Home: React.FC = () => {
+  const currentUser = useSelector((store:RootState) => store.user);
+  const dispatch = useDispatch();
+
+  const setUser = async() => {
+    const users = await fetchData('/userProfiles');
+    const userData = users.find((user: any) => user.user_id == currentUser.user_id);
+    dispatch({type:SET_USER,payload:userData})
+  }
+
+  useEffect(()=>{
+    setUser();
+  },[currentUser.user_id]);
 
   return <><div className='container-H'>
     <div className='container-H-image'>

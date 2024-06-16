@@ -5,6 +5,8 @@ import { useAuth } from '../../context/AuthContext';
 import { UserProfile } from 'firebase/auth';
 import { fetchData } from '../../services/api';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { SET_USER_ID } from '../../redux/actionTypes';
 
 const Login: React.FC = () => {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -16,6 +18,7 @@ const Login: React.FC = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const loadUsers = async () => {
     const response = await fetchData('/userProfiles');
@@ -33,6 +36,7 @@ const Login: React.FC = () => {
         setError('');
         setLoading(true);
         await login(email, password);
+        dispatch({type:SET_USER_ID,payload:email})
         if(email === 'admin@gmail.com'){
           navigate('/admin')
         }

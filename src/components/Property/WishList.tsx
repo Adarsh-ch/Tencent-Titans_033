@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react'
-import { useWishlist } from '../../hooks/useWishList'
-import { useAuth } from '../../context/AuthContext';
 import PropertyCard from './PropertyCard';
+import { RootState ,store} from '../../redux/store';
+import { useSelector } from 'react-redux';
 
 const WishList = () => {
-    const {currentUser} = useAuth();
-    const {wishlist,fetchWishlist} = useWishlist(currentUser?.email);
-
-    useEffect(() => {
-      fetchWishlist();
-    },[fetchWishlist])
-
+    const {user_wishlist} = useSelector((store:RootState) => store.user);
+    console.log(user_wishlist);
+    
   return (
     <div>
       <div className="property-list">
-          {wishlist.map((property) => (
+          {user_wishlist.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
         </div>
