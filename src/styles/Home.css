@@ -318,7 +318,10 @@ body {
     background-color: green;
     color: white;
 }
-
+.our-services a{
+    text-decoration: none;
+    color: black;
+}
 /* Our services ends */
 .Our-aminities {
     font-family: sans-serif;

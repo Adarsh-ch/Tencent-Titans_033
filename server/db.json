@@ -230,23 +230,26 @@
     {
       "user_id": "m@gmail.com",
       "user_listing": [],
-      "user_wishlist": [
-        {
-          "id": "2",
-          "description": "3 BHK Flat In Prime Location Bangalore for Sell",
-          "title": "HSR LAYOUT Greenspace",
-          "location": "Bangalore",
-          "rent": 35000,
-          "maintenance": "₹ 3000",
-          "area": 1500,
-          "furniture_type": "Semi Furnished",
-          "property_type": "Sell",
-          "flat_type": "3 BHK",
-          "prefer_category": "Family, Female",
-          "image": "https://dlifeinteriors.com/wp-content/uploads/2022/09/living-room-design-apartment-interior-project-kochi-1024x576.jpg"
-        }
-      ],
+      "user_wishlist": [],
       "id": 1
+    },
+    {
+      "user_id": "a@gmail.com",
+      "user_listing": [],
+      "user_wishlist": [],
+      "id": 2
+    },
+    {
+      "user_id": "d@gmail.com",
+      "user_listing": [],
+      "user_wishlist": [],
+      "id": 3
+    },
+    {
+      "user_id": "s@gmail.com",
+      "user_listing": [],
+      "user_wishlist": [],
+      "id": 4
     }
   ]
 }
