@@ -45,7 +45,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
 
     fetchAndCheckWishlist();
   }, [ fetchWishlist,currentUser,property.id,isAdded]);
-
+console.log(property.image);
 
   return (
     <div className="property-card">
@@ -54,7 +54,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
       </div>
       <p
         className="text-success fs-6"
-        style={{ paddingLeft: '20px', margin: '0' }}
+        style={{ paddingLeft: '20px', marginTop: '5px' }}
       >
         FOR {property.property_type.toLocaleUpperCase()}
       </p>
@@ -64,11 +64,17 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         {property.location}
       </p>
       <div className="type">
-        <p> {property.flat_type}</p>
-        <p> {property.area} sqft</p>
-        <p> {property.prefer_category}</p>
+        <p> {property.flat_type},</p>
+        <p> {property.area} sqft,</p>
+        <p> {property.prefer_category},</p>
+      
+      
       </div>
+      <p style={{padding:"20px", marginTop:"-30px"}}>${property.rent}</p>
+      <p style={{padding:"20px", marginTop:"-50px"}}>{property.furniture_type}</p>
+   
       <div className="icons-type">
+  
         <button
           onClick={() => navigate(`/properties/${property.id}`)}
           title="Details"
