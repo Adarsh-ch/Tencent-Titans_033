@@ -230,100 +230,27 @@
     {
       "user_id": "m@gmail.com",
       "user_listing": [],
-      "user_wishlist": [
-        {
-          "id": "2",
-          "description": "3 BHK Flat In Prime Location Bangalore for Sell",
-          "title": "HSR LAYOUT Greenspace",
-          "location": "Bangalore",
-          "rent": 35000,
-          "maintenance": "₹ 3000",
-          "area": 1500,
-          "furniture_type": "Semi Furnished",
-          "property_type": "Sell",
-          "flat_type": "3 BHK",
-          "prefer_category": "Family, Female",
-          "image": "https://dlifeinteriors.com/wp-content/uploads/2022/09/living-room-design-apartment-interior-project-kochi-1024x576.jpg"
-        }
-      ],
+      "user_wishlist": [],
       "id": 1
     },
     {
-      "user_id": "eve.holt@reqres.in",
+
+      "user_id": "a@gmail.com",
       "user_listing": [],
-      "user_wishlist": [
-        {
-          "id": "8",
-          "description": "1 BHK Flat Close to University Kolkata for Sell",
-          "title": "JADAVPUR University View",
-          "location": "Kolkata",
-          "rent": 20000,
-          "maintenance": "No Extra Maintenance",
-          "area": 700,
-          "furniture_type": "Unfurnished",
-          "property_type": "Sell",
-          "flat_type": "1 BHK",
-          "prefer_category": "Any",
-          "image": "https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=0&k=20&c=iZ561ZIXOtPYGSzqlKUnLrliorreOYVz1pzu8WJmrnc="
-        },
-        {
-          "id": "7",
-          "description": "2 BHK Flat In Modern Complex Pune for Rent",
-          "title": "VIMAN NAGAR Heights",
-          "location": "Pune",
-          "rent": 27000,
-          "maintenance": "₹ 2500",
-          "area": 1150,
-          "furniture_type": "Semi Furnished",
-          "property_type": "Rent",
-          "flat_type": "2 BHK",
-          "prefer_category": "Family, Female",
-          "image": "https://ahmedelsewailky.github.io/estateX/images/image-7.jpg"
-        },
-        {
-          "id": "9",
-          "description": "3 BHK Flat With Garden View Delhi for Rent",
-          "title": "SAKET Green Valley",
-          "location": "Delhi",
-          "rent": 38000,
-          "maintenance": "₹ 2500",
-          "area": 1550,
-          "furniture_type": "Fully Furnished",
-          "property_type": "Rent",
-          "flat_type": "3 BHK",
-          "prefer_category": "Family",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVRS4-Q3_qHAT3k6enJk-tGwWrcEgMJWRBdvCAX8QR2XjVKYvwdoO0s3VKRGosfL12fOY&usqp=CAU"
-        },
-        {
-          "id": "11",
-          "description": "Studio Apartment With Modern Amenities Ahmedabad for Rent",
-          "title": "SATELLITE Trendy Studio",
-          "location": "Ahmedabad",
-          "rent": 16000,
-          "maintenance": "No Extra Maintenance",
-          "area": 550,
-          "furniture_type": "Fully Furnished",
-          "property_type": "Rent",
-          "flat_type": "Studio",
-          "prefer_category": "Any",
-          "image": "https://media.istockphoto.com/id/1293762741/photo/modern-living-room-interior-3d-render.jpg?s=612x612&w=0&k=20&c=iZ561ZIXOtPYGSzqlKUnLrliorreOYVz1pzu8WJmrnc="
-        },
-        {
-          "id": "10",
-          "description": "3 BHK Flat With Garden View Delhi for Rent",
-          "title": "SAKET Green Valley",
-          "location": "Delhi",
-          "rent": 38000,
-          "maintenance": "₹ 2500",
-          "area": 1550,
-          "furniture_type": "Fully Furnished",
-          "property_type": "Rent",
-          "flat_type": "3 BHK",
-          "prefer_category": "Family",
-          "image": "https://www.home-designing.com/wp-content/uploads/2018/03/Reclaimed-crate-coffee-table.jpg"
-        }
-      ],
+      "user_wishlist": [],
       "id": 2
-    }
-  ]
+    },
+    {
+      "user_id": "d@gmail.com",
+      "user_listing": [],
+      "user_wishlist": [],
+      "id": 3
+    },
+    {
+      "user_id": "s@gmail.com",
+      "user_listing": [],
+      "user_wishlist": [],
+      "id": 4
+     }
+    ]
 }

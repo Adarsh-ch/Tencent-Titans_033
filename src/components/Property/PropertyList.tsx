@@ -18,11 +18,7 @@ const PropertyList: React.FC = () => {
   // const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadProperties = async () => {
-      const response = await fetchData(queryString);
-      setProperties(response);
-    };
-    loadProperties();
+    fetchData(queryString).then(res => setProperties(res))
   }, [queryString]);
 
   // if (error) {

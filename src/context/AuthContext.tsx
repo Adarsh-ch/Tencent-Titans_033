@@ -69,6 +69,9 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user: User | null) => {
       setCurrentUser(user);
+      //console.log(user?.getIdToken().then(res => console.log(res)))
+        user?.getIdToken().then(res => localStorage.setItem('Token',res));
+        
     });
     return unsubscribe;
   }, []);

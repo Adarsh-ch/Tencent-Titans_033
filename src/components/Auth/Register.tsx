@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link,  useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
+import axios from "axios"
 
 const Register =() => {
   const emailRef = useRef<HTMLInputElement>(null)
@@ -29,6 +30,13 @@ const Register =() => {
       setError("")
       setLoading(true)
       await signup(email, password)
+      const newUser = {
+        user_id:email,
+        user_listing:[],
+        user_wishlist:[]
+       };
+
+       axios.post(`http://localhost:5001/userProfiles`,newUser)
       navigate("/")
     } catch {
       setError("Failed to create an account")
