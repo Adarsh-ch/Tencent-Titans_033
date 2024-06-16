@@ -1,3 +1,5 @@
+import { Property } from "../types";
+
 export interface FilterState {
     location: string;
     rent?: number; 
@@ -17,3 +19,9 @@ export interface FilterState {
     payload?: any;
   }
   
+  export interface UserState {
+      user_id: string;
+      user_listing: Property[];
+      user_wishlist: Property[];
+      id?: string;
+  }

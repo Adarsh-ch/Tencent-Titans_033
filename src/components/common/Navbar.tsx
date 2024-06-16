@@ -5,22 +5,23 @@ import logo from '../../assets/Images/logo.png';
 import { useAuth } from '../../context/AuthContext';
 import { useWishlist } from '../../hooks/useWishList';
 import WishList from '../Property/WishList';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 const Navbar: React.FC = () => {
-  const { currentUser } = useAuth();
-  const { wishlist, fetchWishlist } = useWishlist(currentUser?.email);
+  const user = useSelector((store:RootState) => store.user);
+  const { fetchWishlist } = useWishlist(user.user_id);
   const [wishlistCount, setWishlistCount] = useState(0);
   const { logout } = useAuth();
 
   useEffect(() => {
-    if (currentUser) {
     fetchWishlist();
-    }
-  }, [currentUser,fetchWishlist]);
+    //console.log(user)
+  }, [user.user_id]);
 
   useEffect(() => {
-      setWishlistCount(wishlist.length);
-  }, [wishlist]);
+      setWishlistCount(user.user_wishlist.length);
+  }, [user.user_wishlist]);
 
   return (
     <nav className="nav-bar">
@@ -62,7 +63,7 @@ const Navbar: React.FC = () => {
             Post Your Property
           </button>
         </NavLink>
-        {currentUser ? (
+        {user.user_id ? (
           <>
             <button
               className="btn items fs-5"

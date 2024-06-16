@@ -6,19 +6,19 @@ import '../../styles/Properties.css';
 import Filter from './Filter';
 import useQuery from '../../hooks/useQuery';
 import PaginationComponent from './PaginationComponent';
+import SearchInput from '../common/SearchInput';
+
+
+
 
 
 const PropertyList: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
-  const {queryString} = useQuery()
+  const {queryString} = useQuery();
   // const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadProperties = async () => {
-      const response = await fetchData(queryString);
-      setProperties(response);
-    };
-    loadProperties();
+    fetchData(queryString).then(res => setProperties(res))
   }, [queryString]);
 
   // if (error) {
@@ -27,9 +27,16 @@ const PropertyList: React.FC = () => {
 
   return (
     <>
+    {/* <div className='input-container'>
+      <input className="location-input" type="text" placeholder="Enter Your Location" />
+      <button type="button"><i className="fa-solid fa-magnifying-glass"></i></button>
+      </div> */}
+<SearchInput/>
+   
       <div className="main-container">
         <Filter/>
         <div>
+     
         <div className="property-list">
           {properties.map((property) => (
             <PropertyCard key={property.id} property={property} />

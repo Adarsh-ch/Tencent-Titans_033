@@ -75,3 +75,43 @@ span{
 
     color: white;
 }
+
+@media (max-width: 640px) {
+    .property-detail {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .property-detail img {
+        width: 100%;
+        height: auto;
+    }
+    .title,
+    .description,
+    .label,
+    .text {
+        text-align: center;
+    }
+    .table {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .table-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+    .icon {
+        margin-bottom: 10px;
+    }
+    .label,
+    .text {
+        width: 100%;
+    }
+    .btn-owner {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+}
