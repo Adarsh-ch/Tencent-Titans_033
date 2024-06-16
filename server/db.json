@@ -223,6 +223,74 @@
       "flat_type": "2 BHK",
       "prefer_category": "Family",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDoVVP4eLimWVFGyvb6_dKbq058kCaK77hmw&s"
+    },
+    {
+      "description": "sa",
+      "title": "as",
+      "location": "asa",
+      "rent": 12,
+      "maintenance": "2000",
+      "area": 2000,
+      "furniture_type": "Semi Furnished",
+      "property_type": "Sell",
+      "flat_type": "1 RK",
+      "prefer_category": "Bachelor",
+      "image": "https://5.imimg.com/data5/UU/NB/QJ/ANDROID-92035713/1572882152419-jpg-500x500.jpg",
+      "furnitureType": "Fully Furnished",
+      "flatType": "2 BHK",
+      "preferCategory": "Family",
+      "id": "eUprVxw"
+    },
+    {
+      "description": "sa",
+      "title": "as",
+      "location": "asa",
+      "rent": 12,
+      "maintenance": "2000",
+      "area": 2000,
+      "furniture_type": "Semi Furnished",
+      "property_type": "Sell",
+      "flat_type": "1 RK",
+      "prefer_category": "Bachelor",
+      "image": "https://5.imimg.com/data5/UU/NB/QJ/ANDROID-92035713/1572882152419-jpg-500x500.jpg",
+      "furnitureType": "Fully Furnished",
+      "flatType": "2 BHK",
+      "preferCategory": "Family",
+      "id": "p7BDIMR"
+    },
+    {
+      "description": "sa",
+      "title": "as",
+      "location": "asa",
+      "rent": 12,
+      "maintenance": "2000",
+      "area": 2000,
+      "furniture_type": "Semi Furnished",
+      "property_type": "Sell",
+      "flat_type": "1 RK",
+      "prefer_category": "Bachelor",
+      "image": "https://5.imimg.com/data5/UU/NB/QJ/ANDROID-92035713/1572882152419-jpg-500x500.jpg",
+      "furnitureType": "Fully Furnished",
+      "flatType": "2 BHK",
+      "preferCategory": "Family",
+      "id": "kUeNSiZ"
+    },
+    {
+      "description": "sa",
+      "title": "as",
+      "location": "asa",
+      "rent": 12,
+      "maintenance": "2000",
+      "area": 2000,
+      "furniture_type": "Semi Furnished",
+      "property_type": "Sell",
+      "flat_type": "1 RK",
+      "prefer_category": "Bachelor",
+      "image": "https://5.imimg.com/data5/UU/NB/QJ/ANDROID-92035713/1572882152419-jpg-500x500.jpg",
+      "furnitureType": "Fully Furnished",
+      "flatType": "2 BHK",
+      "preferCategory": "Family",
+      "id": "Ksj3Mb_"
     }
   ],
   "listing": [],
@@ -327,6 +395,7 @@
         }
       ],
       "id": 5
+
     }
   ]
 }
