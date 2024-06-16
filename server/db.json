@@ -232,18 +232,18 @@
       "user_listing": [],
       "user_wishlist": [
         {
-          "id": "2",
-          "description": "3 BHK Flat In Prime Location Bangalore for Sell",
-          "title": "HSR LAYOUT Greenspace",
-          "location": "Bangalore",
-          "rent": 35000,
-          "maintenance": "₹ 3000",
-          "area": 1500,
-          "furniture_type": "Semi Furnished",
-          "property_type": "Sell",
-          "flat_type": "3 BHK",
-          "prefer_category": "Family, Female",
-          "image": "https://dlifeinteriors.com/wp-content/uploads/2022/09/living-room-design-apartment-interior-project-kochi-1024x576.jpg"
+          "id": "3",
+          "description": "1 BHK Compact Flat In Heart of Mumbai for Rent",
+          "title": "COLABA Cozy Nest",
+          "location": "Mumbai",
+          "rent": 18000,
+          "maintenance": "No Extra Maintenance",
+          "area": 650,
+          "furniture_type": "Unfurnished",
+          "property_type": "Rent",
+          "flat_type": "1 BHK",
+          "prefer_category": "Any",
+          "image": "https://ahmedelsewailky.github.io/estateX/images/image-3.jpg"
         }
       ],
       "id": 1

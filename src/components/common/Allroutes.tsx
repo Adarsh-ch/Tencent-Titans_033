@@ -8,8 +8,20 @@ import ForgotPasswordPage from '../../pages/ForgotPasswordPage'
 import UserDashboardPage from '../../pages/UserDashboardPage'
 import {AdminPage} from '../Admin/AdminPage';
 import PostYourProperty from '../Property/PostYourProperty'
+import { useAuth } from '../../context/AuthContext'
+import { useEffect } from 'react'
+import { SET_USER_ID } from '../../redux/actionTypes'
+import { useDispatch } from 'react-redux'
 
 const Allroutes = () => {
+  const {currentUser} = useAuth();
+  const dispatch = useDispatch();
+  console.log(currentUser)
+
+  useEffect(()=> {
+    dispatch({type:SET_USER_ID,payload:currentUser?.email})
+  },[currentUser])
+
   return (
     <Routes>
         <Route path="/" element={<Home />} />
