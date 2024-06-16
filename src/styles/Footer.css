@@ -85,7 +85,7 @@
 }
 .footer-form p{
     
-    width: 400px;
+    width: fit-content;
 }
 
 .footer-form input{

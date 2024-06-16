@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { useTheme } from './Theme/ThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse,faBuilding, faUser, faHeadset } from '@fortawesome/free-solid-svg-icons'
+import { Button } from '@chakra-ui/react';
 
 export const Sidebar = () => {4
     const {theme} = useTheme();
@@ -22,14 +23,21 @@ export const Sidebar = () => {4
       };
 
   return (
-    <Box p={4} bg={theme.colors.background} color={theme.colors.primary} height="100%" textAlign="center">
-      <Text fontSize="2xl" mb={4}>Hello, Admin</Text>
+    <Box p={4} bg={theme.colors.background} color={theme.colors.primary} height="100%" textAlign="center" position="fixed">
+      <Box as="div" bg="#9DC183" style={{borderRadius:"5px"}}>
+        <Text fontSize="2xl" p={10} mb={4}>Hello, Admin</Text>
+      </Box>
       <VStack align="stretch" spacing={2}>
         <NavLink 
           to='/admin' 
           style={styles.link}
         >
-        <FontAwesomeIcon icon={faHouse} />  Dashboard
+         <Button colorScheme='teal' size='md' width="100%" style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap:'10px',
+          alignItems: 'center',
+         }}><FontAwesomeIcon icon={faHouse} /> Dashboard</Button>
         </NavLink>
         <NavLink 
           to='/admin/property-analytics' 
@@ -38,7 +46,12 @@ export const Sidebar = () => {4
             ...(isActive ? styles.activeLink : {}),
           })}
         >
-        <FontAwesomeIcon icon={faBuilding} /> Property Analytics
+          <Button colorScheme='teal' size='md' width="100%" style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap:'10px',
+          alignItems: 'center',
+         }}><FontAwesomeIcon icon={faBuilding} /> Property Analytics</Button>
         </NavLink>
         <NavLink 
           to='/admin/user-profiles' 
@@ -47,7 +60,12 @@ export const Sidebar = () => {4
             ...(isActive ? styles.activeLink : {}),
           })}
         >
-        <FontAwesomeIcon icon={faUser} />  Users Profile
+          <Button colorScheme='teal' size='md' width="100%" style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap:'10px',
+          alignItems: 'center',
+         }}><FontAwesomeIcon icon={faUser} />  Users Profile</Button>
         </NavLink>
         <NavLink 
           to='/admin/support-disputes' 
@@ -56,7 +74,12 @@ export const Sidebar = () => {4
             ...(isActive ? styles.activeLink : {}),
           })}
         >
-        <FontAwesomeIcon icon={faHeadset} />  Support & Dispute
+          <Button colorScheme='teal' size='md' width="100%" style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap:'10px',
+          alignItems: 'center',
+         }}><FontAwesomeIcon icon={faHeadset} />  Support & Dispute</Button>
         </NavLink>
       </VStack>
     </Box>

@@ -13,6 +13,8 @@ import {
   import './admin.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { Topbar } from './Topbar';
+import './admin.css'
  
   
   const UserProfiles = ({ userProfiles }: any) => {
@@ -21,6 +23,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
     const totalUsers = useMemo(() => userProfiles.length, [userProfiles]);
  
     return (
+      <>
+      <Topbar/>
       <Box bgColor={theme.colors.background} color={theme.colors.primary} p={5}>
         <VStack spacing={5} align="stretch">
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={5}>
@@ -35,6 +39,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
           </SimpleGrid>
           </VStack>
       </Box>
+      </>
     );
   };
   

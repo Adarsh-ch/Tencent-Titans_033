@@ -1,4 +1,4 @@
-import {Flex,Text} from '@chakra-ui/react'
+import {Flex} from '@chakra-ui/react'
 import { useTheme } from './Theme/ThemeContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faGear, faInfoCircle, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
@@ -8,10 +8,10 @@ export const Topbar = () => {
     const { theme, toggleTheme, themeMode } = useTheme();
 
   return (
-    <Flex justifyContent="space-between" bgColor={theme.colors.background}>
-        <Text color={theme.colors.primary}>Estate</Text>
-        <Text color={theme.colors.primary}>Admin</Text>
-        <Flex width={150} justifyContent="space-evenly" gap={5}>
+    <Flex justifyContent="right" paddingRight={50} bgColor={theme.colors.background} p={3}>
+        {/* <Text color={theme.colors.primary}>Estate</Text> */}
+        {/* <Text color={theme.colors.primary}>Admin</Text> */}
+        <Flex width={150} justifyContent="space-evenly" gap={5} justify="right">
             {
                 themeMode === 'light' 
                 ? 
