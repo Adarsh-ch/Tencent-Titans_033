@@ -16,6 +16,7 @@ const UserDashboard: React.FC = () => {
 
   return <div style={{minHeight:'100vh'}}>User Dashboard
     <button onClick={handleSignOut}>Sign Out</button>
+    <h1>welcome</h1>
   </div>;
 };
 
