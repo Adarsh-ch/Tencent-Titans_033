@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Property } from '../../types';
 import '../../styles/Properties.css';
@@ -62,7 +62,10 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   },[user])
 
   return (
+    <>
+   
     <div className="property-card">
+  
       <div className="image-container">
         <img src={property.image} alt={property.title} />
       </div>
@@ -104,6 +107,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
