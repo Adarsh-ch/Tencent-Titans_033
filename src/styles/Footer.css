@@ -1,7 +1,4 @@
-
-
 .footer-upper-box {
-  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,9 +12,9 @@
     position: relative;
     top: 100px;
 
-    
-    
-   
+
+
+
 }
 
 .btn-get-intouch {
@@ -33,132 +30,158 @@
     background-color: #2F3531;
     height: 500px;
     width: 100%;
-   
+
 }
-.main-footer div img{
+
+.main-footer div img {
     height: 100px;
     width: 100px;
 }
-.main-footer div p{
+
+.main-footer div p {
     color: white;
 }
-.footer-logo-section{
+
+.footer-logo-section {
     width: 400px;
 
 }
-.footer-logo-section li{
+
+.footer-logo-section li {
     font-family: sans-serif;
     color: white;
     list-style: none;
     line-height: 50px;
 }
-.footer-logo-section hr{
+
+.footer-logo-section hr {
     color: white;
 }
-.footer-logo-section i{
+
+.footer-logo-section i {
     color: white;
-   
-}
-.footer-logo-section div i{
-  font-size: 20px;
 
 }
-.icons-div{
+
+.footer-logo-section div i {
+    font-size: 20px;
+
+}
+
+.icons-div {
     display: flex;
     gap: 30px;
 }
-.links-div li{
+
+.links-div li {
     list-style: none;
     color: white;
 }
-.links-div li a{
+
+.links-div li a {
     list-style: none;
     color: white;
     text-decoration: none;
     line-height: 50px;
-  
+
 }
-.footer-form{
+
+.footer-form {
     font-family: sans-serif;
     color: white;
-   
+
 }
-.footer-form p{
-    
+
+.footer-form p {
+
     width: fit-content;
 }
 
-.footer-form input{
-    padding: 20px ;
+.footer-form input {
+    padding: 20px;
     border: none;
 }
-.footer-form button{
-    padding: 20px ;
+
+.footer-form button {
+    padding: 20px;
     background-color: green;
     border: none;
     color: white;
 
 }
-.footer-form button:hover{
+
+.footer-form button:hover {
     background-color: rgb(1, 46, 7);
-  
+
 }
-.all-right-footer{
+
+.all-right-footer {
     text-align: center;
     font-family: sans-serif;
     background-color: rgb(88, 88, 88);
     color: white;
 }
-.footer-main-Container{
+
+.footer-main-Container {
     width: 100%;
     max-width: 1440px;
     margin: auto;
 }
+
 @media (max-width: 640px) {
     .footer-upper-box {
-        flex-direction: column; 
-        gap: 20px; 
-        width: 90%; 
-      
-        top: 50px; 
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+        top: 50px;
+        height: 250px;
     }
 
+    .footer-input {
+        display: flex;
+        justify-content: center;
+
+    }
     .main-footer {
-        flex-direction: column; 
-        height: auto; 
-        padding: 20px; 
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
     }
 
     .footer-logo-section {
-        width: 100%; 
-        text-align: center; 
-        margin-bottom: 20px; 
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .footer-logo-section p {
+        padding-top: 40px;
     }
 
     .icons-div {
-        justify-content: center; 
+        justify-content: center;
         gap: 15px;
     }
 
     .links-div li,
     .links-div li a {
-        line-height: 30px; 
-        text-align: center; 
+        line-height: 30px;
+        text-align: center;
     }
 
     .footer-form p {
-        width: 100%; 
-        text-align: center; 
-     
+        width: 100%;
+        text-align: center;
+
     }
 
-    .footer-form input,
-    .footer-form button {
-        width: 100%; 
-        padding: 15px;
+    .footer-form h4 {
+        text-align: center;
+        margin-top: 20px;
     }
 
-    .footer-form {
+    .links-div p {
+        text-align: center;
         margin-top: 20px;
     }
 }

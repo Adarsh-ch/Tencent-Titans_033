@@ -71,7 +71,7 @@ const Home: React.FC = () => {
     </div>
     {/* About section ends */}
 
-  </div>;
+  </div>
 
     {/* Our services section starts */}
     <div className='our-services'>
@@ -101,9 +101,7 @@ const Home: React.FC = () => {
         </div>
         </Link>
       </div>
-
-
-    </div>
+       </div>
     {/* Our services section ends */}
 
 
