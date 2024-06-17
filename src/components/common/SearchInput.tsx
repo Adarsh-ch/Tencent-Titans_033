@@ -1,45 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa'; 
-import { SET_LOCATION } from '../../redux/actionTypes';
-
-const SearchInput: React.FC = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [location, setLocation] = useState('');
-
-  const handleSearch = (event: React.FormEvent) => {
-    event.preventDefault();
-    navigate('/properties');
-
-    dispatch({ type: SET_LOCATION, payload: location }); 
-    setLocation('');
-
-    useEffect(() => {
-        dispatch({ type: SET_LOCATION, payload: location }); 
-      }, [location, dispatch]);
-  };
-
+import React from 'react';
+import '../../styles/SeachInput.css'
+const SearchInput: React.FC<{ value: string; onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }> = ({ value, onChange }) => {
   return (
-    <form onSubmit={handleSearch} className="shadow m-auto p-3" style={{ maxWidth:'1440px', translate: '0px 10px', backgroundColor: 'white' }}>
-      <div className="input-group">
-        <input
-          type="text"
-          className="form-control py-2 p-4 border-secondary-subtle"
-          placeholder="Enter Location Here!"
-          style={{ width: '200px', height: '50px', }}
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
-        <button
-          type="submit"
-          style={{ height: '50px', border: 'none', padding: '8px 20px', backgroundColor: 'green', color: 'white', alignItems: 'center', borderRadius: '0 6px 6px 0' }}
-        >
-          <FaSearch />
-        </button>
-      </div>
-    </form>
+    <div className='input-container'>
+      <input
+        className="location-input"
+        type="text"
+        placeholder="Enter Your Location"
+        value={value}
+        onChange={onChange}
+      />
+      <button type="button"><i className="fa-solid fa-magnifying-glass"></i></button>
+    </div>
   );
 };
 

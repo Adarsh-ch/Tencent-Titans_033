@@ -1,0 +1,30 @@
+.input-container {
+    display: flex;
+
+   
+    max-width: 1440px;
+    margin: 20px auto;
+
+
+}
+
+.input-container .location-input {
+    padding: 10px 0;
+    width: 65%;
+    margin-left: 325px;
+
+
+}
+
+.input-container .location-input:hover {
+    border: 2px solid green;
+
+
+}
+
+.input-container button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 0 20px;
+}

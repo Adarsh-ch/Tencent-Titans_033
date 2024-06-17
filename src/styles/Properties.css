@@ -46,24 +46,7 @@
 
   
 }
-/* .input-container{
-    display: flex;
-    justify-content: center;   
-    margin-top: 20px;
-}
-.input-container input {
-  width: 500px;
-  padding: 10px 0;
-}
-.input-container input:hover {
-    border: 1px solid green;
-  }
-.input-container button{
-    background-color: green;
-    border: none;
-    color: white;
-    padding: 0 10px;
-} */
+
 .filter-section {
     width: 33%;
     border: 1px solid rgb(170, 167, 167);
@@ -125,6 +108,7 @@
     margin: auto;
     padding: 30px 0px 30px 40px;
     max-width: 1440px;
+    
  
 }
 
