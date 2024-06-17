@@ -63,7 +63,7 @@ const PostYourProperty: React.FC = () => {
     e.preventDefault();
     try {
       
-        const response = await axios.post('http://localhost:5001/properties', property);
+        const response = await axios.post('https://server-deploy-7sg1.onrender.com/properties', property);
         console.log(property,response.data);
      
         // fetchListing();

@@ -77,7 +77,7 @@ console.log(user);
               aria-controls="offcanvasRight"
               style={{border:'none',background:'none'}}
             >
-              <i className={wishlistCount > 0 ? "fa-solid fa-heart bg-danger" :"fa-regular fa-heart"}></i><span className='count '>{wishlistCount}</span>
+              <i className={wishlistCount > 0 ? "fa-solid fa-heart" :"fa-regular fa-heart"}></i><span className='count '>{wishlistCount}</span>
             </button>
 
             <div
