@@ -35,7 +35,7 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
   const currentUser = useSelector((store:RootState) => store.user);
   const {addToWishlist,removeFromWishlist} = useWishlist(currentUser.user_id)
 
-  console.log(currentUser);
+  // console.log(currentUser);
   const [wishlist, setWishlist] = useState(()=>{
     if(currentUser.wishlist){
       if(currentUser.wishlist.filter((wishlist: { id: number|string; }) => wishlist.id === property.id)[0]){
@@ -56,7 +56,7 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
     async function fetchReviews (){
       try{
         const response = await axios.get(`http://localhost:5001/properties/${property.id}/`);
-        console.log("frefviews",response.data);
+        // console.log("frefviews",response.data);
         setReviews(response.data.reviews || []);
       }
       catch(err){
@@ -89,13 +89,13 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
       })
     }
   };
-  console.log("reviews",reviews);
+  // console.log("reviews",reviews);
   const handleReviewSubmit = async () => {
     try{
       const response = await axios.patch(`http://localhost:5001/properties/${property.id}/`,{
         reviews: [...reviews,{...newReview,username:currentUser.user_id}],
       });
-      console.log("responsepatch",response.data.reviews)
+      // console.log("responsepatch",response.data.reviews)
       setReviews(response.data.reviews); 
       setNewReview({ rating: 0, comment: '',username:'' });
     }
