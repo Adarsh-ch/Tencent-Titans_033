@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "json-server --watch server/db.json --port 5001"
+    "start": "node server.js"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
