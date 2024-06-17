@@ -7,7 +7,7 @@ import Footer from '../components/common/Footer';
 import service_icon_1 from '../../src/assets/Images/service_icon_1.png'
 import service_icon_2 from '../../src/assets/Images/service_icon_2.png'
 import service_icon_3 from '../../src/assets/Images/service_icon_3.png'
-import sketch from '../../src/assets/Images/sketch.png'
+
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { SET_USER } from '../redux/actionTypes';

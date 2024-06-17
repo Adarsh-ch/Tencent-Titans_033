@@ -8,7 +8,7 @@ import { SET_PAGE, SET_PREV } from '../../redux/actionTypes';
 const PaginationComponent = () => {
   const [count, setCount] = useState(0);
   const filter = useSelector((store: RootState) => store.filter);
-  const {queryString,propertyString} = useQuery();
+  const {propertyString} = useQuery();
   const dispatch = useDispatch();
   console.log(filter.prev,count,propertyString)
 

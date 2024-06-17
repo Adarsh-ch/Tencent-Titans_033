@@ -19,7 +19,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   );
   const navigate = useNavigate();
   console.log(user)
-
+console.log(propertyId);
   const handleClick = async (id : (string|number)) => {
     setPropertyId(id);
     if (!user.user_id) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../context/AuthContext';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import '../../styles/UserDashboard.css';
 import { RootState } from '../../redux/store';
 import PropertyCard from '../Property/PropertyCard';
@@ -9,9 +9,7 @@ import Footer from '../common/Footer';
 import { FaSquareWhatsapp } from "react-icons/fa6";
 
 const UserDashboard: React.FC = () => {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+
   const location = useLocation();
   const [activeButton, setActiveButton] = useState<string>('info');
   const { user_wishlist, user_listing } = useSelector((store: RootState) => store.user);
@@ -23,10 +21,7 @@ const UserDashboard: React.FC = () => {
       setActiveButton(section);
     }
   }, [location.search]);
-  const handleSignOut = () => {
-    logout();
-    navigate('/');
-  };
+
 
   const handleButtonClick = (buttonName: string) => {
     setActiveButton(buttonName);
