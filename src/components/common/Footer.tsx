@@ -37,8 +37,11 @@ const Footer: React.FC = () => {
           <div className='footer-form'>
             <h4>NEWS LETTER</h4>
             <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
+            <div className="footer-input">
             <input type="text" placeholder='Your email' />
             <button><i className="fa-solid fa-play"></i></button>
+            </div>
+            
           </div>
         </div>
       </div>

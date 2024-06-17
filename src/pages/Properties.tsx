@@ -10,7 +10,7 @@ const Properties: React.FC = () => {
     <>
     {/* <SearchBar/> */}
     <div className='property-container'>
-          <PropertyList />;
+          <PropertyList />
     </div>
     <Footer />
     </>

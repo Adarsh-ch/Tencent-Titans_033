@@ -28,3 +28,24 @@
     border: none;
     padding: 0 20px;
 }
+
+@media (max-width: 640px) {
+    .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Center align items */
+        padding: 10px; /* Add padding for spacing */
+    }
+
+    .input-container .location-input {
+        width: 60%;
+        margin-left: 0; 
+     
+    }
+
+    .input-container button {
+        padding: 10px 20px; /* Increase padding for better touch targets */
+        width: 20%; /* Adjust width for better alignment */
+        border: 1px solid;
+    }
+}
