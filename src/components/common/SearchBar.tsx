@@ -25,6 +25,7 @@ const SearchBar: React.FC = () => {
         <option value="Delhi">Delhi</option>
         <option value="Noida">Noida</option>
         <option value="Gurgaon">Gurgaon</option>
+        <option value="Jaipur">Jaipur</option>
       </select>
       <select className="form-select d-inline me-4 py-2 p-4 border-secondary-subtle"  aria-label="Default select example" style={{width:'200px',height:'50px'}} onChange={(e) => dispatch({type:SET_PROPERTY_TYPE,payload:e.target.value})}>
         <option value="" >Property Type</option>
