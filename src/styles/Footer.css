@@ -119,7 +119,7 @@
         flex-direction: column; 
         gap: 20px; 
         width: 90%; 
-        padding: 20px; 
+      
         top: 50px; 
     }
 
@@ -149,6 +149,7 @@
     .footer-form p {
         width: 100%; 
         text-align: center; 
+     
     }
 
     .footer-form input,
