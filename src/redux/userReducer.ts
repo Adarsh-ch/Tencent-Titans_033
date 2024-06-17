@@ -1,5 +1,5 @@
 import { Property } from '../types';
-import { ADD_TO_LISTING, ADD_TO_WISHLIST, FETCH_WISHLIST, REMOVE_FROM_WISHLIST, SET_USER, SET_USER_ID } from './actionTypes';
+import { ADD_TO_LISTING, ADD_TO_WISHLIST, FETCH_LISTING, FETCH_WISHLIST, REMOVE_FROM_WISHLIST, SET_USER, SET_USER_ID } from './actionTypes';
 import { Action } from './storeInterfaces';
 
 const initialState = {
@@ -11,6 +11,7 @@ const initialState = {
 export const userReducer = (state=initialState,{type,payload}:Action) => {
     switch(type){
         case ADD_TO_LISTING:
+            console.log(payload,state.user_listing);
             return { ...state, user_listing: [...state.user_listing, payload] };
         case ADD_TO_WISHLIST: 
           return {...state,user_wishlist:[...state.user_wishlist,payload]};
@@ -18,6 +19,8 @@ export const userReducer = (state=initialState,{type,payload}:Action) => {
           console.log('dispatched',state.user_wishlist.filter((item :Property) => item.id!=payload),payload)
           return {...state,user_wishlist:state.user_wishlist.filter((item :Property) => item.id!=payload)};
         }
+        case FETCH_LISTING:
+            return {...state,user_listing:payload};
         case FETCH_WISHLIST:
             return {...state,user_wishlist:payload};
         case SET_USER:

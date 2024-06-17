@@ -15,3 +15,4 @@ export const FETCH_WISHLIST = 'FETCH_WISHLIST';
 export const SET_USER = 'SET_USER';
 export const SET_USER_ID = 'SET_USER_ID';
 export const ADD_TO_LISTING = 'ADD_TO_LISTING';
+export const FETCH_LISTING = 'FETCH_LISTING'
