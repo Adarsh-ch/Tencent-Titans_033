@@ -14,3 +14,4 @@ export const REMOVE_FROM_WISHLIST = 'REMOVE_FROM_WISHLIST';
 export const FETCH_WISHLIST = 'FETCH_WISHLIST';
 export const SET_USER = 'SET_USER';
 export const SET_USER_ID = 'SET_USER_ID';
+export const ADD_TO_LISTING = 'ADD_TO_LISTING';
