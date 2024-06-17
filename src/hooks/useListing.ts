@@ -1,7 +1,7 @@
 import { Property } from '../types';
 import { fetchData, updateData } from '../services/api';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, store } from '../redux/store';
+import { RootState} from '../redux/store';
 import { ADD_TO_LISTING, FETCH_LISTING,} from '../redux/actionTypes';
 
 export const useListing = (currentUserEmail: string | null | undefined) => {

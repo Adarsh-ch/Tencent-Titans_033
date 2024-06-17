@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../../styles/navbar.css';
 import logo from '../../assets/Images/logo.png';
 import { useAuth } from '../../context/AuthContext';
@@ -82,7 +82,7 @@ console.log(user);
 
             <div
               className="offcanvas offcanvas-end"
-              tabindex="-1"
+              
               id="offcanvasRight"
               aria-labelledby="offcanvasRightLabel"
             >

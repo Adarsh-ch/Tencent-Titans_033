@@ -1,7 +1,7 @@
 import { Property } from '../types';
 import { fetchData, updateData } from '../services/api';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, store } from '../redux/store';
+import { RootState} from '../redux/store';
 import { ADD_TO_WISHLIST, FETCH_WISHLIST, REMOVE_FROM_WISHLIST } from '../redux/actionTypes';
 
 export const useWishlist = (currentUserEmail: string | null | undefined) => {
@@ -40,7 +40,7 @@ export const useWishlist = (currentUserEmail: string | null | undefined) => {
 
   const removeFromWishlist = async (propertyId: string | number) => {
     try {
-      const updatedWishlist = currentUser.user_wishlist.filter(item => item.id != propertyId);
+      const updatedWishlist = currentUser.user_wishlist.filter((item:Property) => item.id != propertyId);
       const users = await fetchData('/userProfiles');
       const user = users.find((user: any) => user.user_id == currentUserEmail);
       if (user) {

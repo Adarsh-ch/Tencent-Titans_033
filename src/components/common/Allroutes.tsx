@@ -7,7 +7,6 @@ import RegisterPage from '../../pages/RegisterPage'
 import ForgotPasswordPage from '../../pages/ForgotPasswordPage'
 import UserDashboardPage from '../../pages/UserDashboardPage'
 import {AdminPage} from '../Admin/AdminPage';
-import PostYourProperty from '../Property/PostYourProperty'
 import { useAuth } from '../../context/AuthContext'
 import { useEffect } from 'react'
 import { SET_USER_ID } from '../../redux/actionTypes'

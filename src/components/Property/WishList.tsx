@@ -1,5 +1,5 @@
 import PropertyCard from './PropertyCard';
-import { RootState ,store} from '../../redux/store';
+import { RootState} from '../../redux/store';
 import { useSelector } from 'react-redux';
 
 const WishList = () => {
@@ -9,7 +9,7 @@ const WishList = () => {
   return (
     <div>
       <div className="property-list">
-          {user_wishlist.map((property) => (
+          {user_wishlist.map((property:any) => (
             <PropertyCard key={property.id} property={property} />
           ))}
         </div>

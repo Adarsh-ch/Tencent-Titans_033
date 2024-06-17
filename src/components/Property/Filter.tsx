@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { RESET_FILTERS, SET_CATEGORY, SET_FLAT_TYPE, SET_FURNITURE_TYPE, SET_ORDER, SET_PROPERTY_TYPE } from '../../redux/actionTypes';
 import useQuery from '../../hooks/useQuery';
-import { RootState } from '../../redux/store';
+
 
 
 const Filter = () => {
     const dispatch = useDispatch();
     const {queryString} = useQuery();
-    const filter = useSelector((store:RootState) => store.filter);
+   
  
   return (
     <div className="filter-section">

@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../../styles/PostYourProperty.css'
 import { Link } from 'react-router-dom';
 import Footer from '../common/Footer';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 
 import { useListing } from '../../hooks/useListing';
