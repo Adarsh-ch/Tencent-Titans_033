@@ -52,7 +52,14 @@
       "property_type": "Rent",
       "flat_type": "1 BHK",
       "prefer_category": "Any",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqw_ePRdmdi6bnjH0SC8jR5UxQ2cWIoeQAw&s"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnqw_ePRdmdi6bnjH0SC8jR5UxQ2cWIoeQAw&s",
+      "reviews": [
+        {
+          "rating": 2,
+          "comment": "Nice house",
+          "username": "a@gmail.com"
+        }
+      ]
     },
     {
       "id": "4",
