@@ -7,18 +7,22 @@ import { useWishlist } from '../../hooks/useWishList';
 import WishList from '../Property/WishList';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
+import { useListing } from '../../hooks/useListing';
 
 const Navbar: React.FC = () => {
   const user = useSelector((store:RootState) => store.user);
   const { fetchWishlist } = useWishlist(user.user_id);
+  const { fetchListing} = useListing(user.user_id);
   const [wishlistCount, setWishlistCount] = useState(0);
   const { logout } = useAuth();
 
   useEffect(() => {
     fetchWishlist();
+    fetchListing();
+
     //console.log(user)
   }, [user.user_id]);
-
+console.log(user);
   useEffect(() => {
       setWishlistCount(user.user_wishlist.length);
   }, [user.user_wishlist]);
@@ -116,7 +120,7 @@ const Navbar: React.FC = () => {
                 </li>
                 <hr />
                 <li>
-                  <Link className="dropdown-item" to="/user/dashboard">
+                  <Link className="dropdown-item" to="/user/dashboard?section=listings">
                     Your Properties
                   </Link>
                 </li>

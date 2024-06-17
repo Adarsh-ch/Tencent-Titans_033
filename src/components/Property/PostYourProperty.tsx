@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
+import { Property } from '../../types';
 import axios from 'axios';
 import '../../styles/PostYourProperty.css'
 import { Link } from 'react-router-dom';
 import Footer from '../common/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-import { ADD_TO_LISTING } from '../../redux/actionTypes';
+
+import { useListing } from '../../hooks/useListing';
 
 
-interface Property {
-  description: string;
-  title:string
-  location: string;
-  rent: number;
-  maintenance: string;
-  area: number;
-  furniture_type: 'Semi Furnished' | 'Fully Furnished' | 'Unfurnished';
-  property_type:'Rent'|'Sell';
-  flat_type: '1 RK' | '1 BHK' | '2 BHK' | '3 BHK' | '4 BHK'|'Any';
-  prefer_category: 'Bachelor' | 'Couple' | 'Family';
-  image: string;
-}
+// interface Properties {
+//   description: string;
+//   title:string
+//   location: string;
+//   rent: number;
+//   maintenance: string;
+//   area: number;
+//   furniture_type: 'Semi Furnished' | 'Fully Furnished' | 'Unfurnished';
+//   property_type:'Rent'|'Sell';
+//   flat_type: '1 RK' | '1 BHK' | '2 BHK' | '3 BHK' | '4 BHK'|'Any';
+//   prefer_category: 'Bachelor' | 'Couple' | 'Family';
+//   image: string;
+//   id?:string|undefined;
+// }
 
 const PostYourProperty: React.FC = () => {
   const [property, setProperty] = useState<Property>({
@@ -29,15 +32,23 @@ const PostYourProperty: React.FC = () => {
     location: '',
     rent: 0,
     maintenance: '',
-    area: 0,
+    area: '',
     furniture_type: 'Semi Furnished',
     property_type:'Rent',
     flat_type: '1 RK',
     prefer_category: 'Bachelor',
     image: '',
+    id:Date.now().toString(),
   });
-  const dispatch = useDispatch();
-  const user_id = useSelector((state: RootState) => state.user.user_id)
+  // const dispatch = useDispatch();
+
+  const user = useSelector((store:RootState) => store.user);
+  const { addTolisting} = useListing(
+    user.user_id
+  );
+
+  const currentUser = useSelector((store:RootState) => store.user);
+  console.log(currentUser)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -52,21 +63,11 @@ const PostYourProperty: React.FC = () => {
     e.preventDefault();
     try {
       
-      const response = await axios.post('http://localhost:5001/properties', property);
-
-      
-      if (response.data && typeof response.data === 'object') {
-       
-        dispatch({ type: ADD_TO_LISTING, payload: response.data });
-
-
-         await axios.patch(`http://localhost:5001/userProfiles/${user_id}`, {
-          user_listing: [...response.data] 
-        });
-      
-      } else {
-        console.error('Invalid response data structure:', response.data);
-      }
+        const response = await axios.post('http://localhost:5001/properties', property);
+        console.log(property,response.data);
+     
+        // fetchListing();
+        addTolisting(property);
     } catch (error) {
       console.error('Error posting property:', error);
     }

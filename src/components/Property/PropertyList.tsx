@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { fetchData} from '../../services/api';
+import React, { useEffect, useState, useCallback } from 'react';
+import { fetchData } from '../../services/api';
 import PropertyCard from './PropertyCard';
 import { Property } from '../../types';
 import '../../styles/Properties.css';
@@ -10,39 +10,57 @@ import SearchInput from '../common/SearchInput';
 
 
 
-
+function debounce(func, delay) {
+  let timeout;
+  return function(...args) {
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func(...args);
+    }, delay);
+  };
+}
 
 const PropertyList: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
-  const {queryString} = useQuery();
-  // const [error, setError] = useState<string | null>(null);
-
+  const [filteredProperties, setFilteredProperties] = useState<Property[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const { queryString } = useQuery();
+  
   useEffect(() => {
-    fetchData(queryString).then(res => setProperties(res))
+    fetchData(queryString).then(res => {
+      setProperties(res);
+      setFilteredProperties(res);
+    });
   }, [queryString]);
 
-  // if (error) {
-  //   return <div className="property-list-error">{error}</div>;
-  // }
+  const handleSearch = useCallback(debounce((term: string) => {
+    if (term) {
+      const filtered = properties.filter(property =>
+        property.location.toLowerCase().includes(term.toLowerCase()) ||
+        property.title.toLowerCase().includes(term.toLowerCase())
+      );
+      setFilteredProperties(filtered);
+    } else {
+      setFilteredProperties(properties);
+    }
+  }, 300), [properties]);
+
+  useEffect(() => {
+    handleSearch(searchTerm);
+  }, [searchTerm, handleSearch]);
 
   return (
     <>
-    {/* <div className='input-container'>
-      <input className="location-input" type="text" placeholder="Enter Your Location" />
-      <button type="button"><i className="fa-solid fa-magnifying-glass"></i></button>
-      </div> */}
-<SearchInput/>
-   
+      <SearchInput value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
       <div className="main-container">
-        <Filter/>
+        <Filter />
         <div>
-     
-        <div className="property-list">
-          {properties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
-          ))}
-        </div>
-        <PaginationComponent />
+          <div className="property-list">
+            {filteredProperties.map((property) => (
+              <PropertyCard key={property.id} property={property} />
+            ))}
+          </div>
+          <PaginationComponent />
         </div>
       </div>
     </>

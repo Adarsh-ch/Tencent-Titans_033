@@ -46,24 +46,7 @@
 
   
 }
-/* .input-container{
-    display: flex;
-    justify-content: center;   
-    margin-top: 20px;
-}
-.input-container input {
-  width: 500px;
-  padding: 10px 0;
-}
-.input-container input:hover {
-    border: 1px solid green;
-  }
-.input-container button{
-    background-color: green;
-    border: none;
-    color: white;
-    padding: 0 10px;
-} */
+
 .filter-section {
     width: 33%;
     border: 1px solid rgb(170, 167, 167);
@@ -125,6 +108,7 @@
     margin: auto;
     padding: 30px 0px 30px 40px;
     max-width: 1440px;
+    
  
 }
 
@@ -176,10 +160,15 @@
 
 @media (max-width: 640px) {
     .property-card {
-        height: 470px;
-        width: 100%;
-        margin-bottom: 20px;
+        height: auto;
+        width: 80%;
+        /* margin-bottom: 20px; */
     }
+    .property-list {
+        display: flex;
+        flex-wrap: wrap;
+        
+}
     .property-card img {
         width: 100%;
         height: auto;
@@ -189,23 +178,13 @@
         text-align: center;
         padding: 10px;
     }
-    .product-title,
-    .product-location,
-    .type,
-    .icons-type {
-        padding: 0 10px;
-    }
+    
     .property-list {
         flex-direction: column;
         align-items: center;
     }
-    .filter-section {
-        width: 100%;
-        padding: 10px;
-        gap: 20px;
-        border: none;
-        border-bottom: 1px solid rgb(170, 167, 167);
-    }
+   
+    
     .input-box {
         flex-direction: column;
         align-items: flex-start;
@@ -218,12 +197,11 @@
         flex-direction: column;
         padding: 20px 10px;
     }
-    .pagination {
-        flex-direction: column;
-        gap: 20px;
+    .filter-section {
+       display: none;
+    
+    
     }
-    .pagination > button {
-        width: 40px;
-        height: 40px;
-    }
+    
+   
 }
