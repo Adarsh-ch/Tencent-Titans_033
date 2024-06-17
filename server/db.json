@@ -12,7 +12,19 @@
       "property_type": "Rent",
       "flat_type": "2 BHK",
       "prefer_category": "Family",
-      "image": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?cs=srgb&dl=pexels-fotoaibe-1643383.jpg&fm=jpg"
+      "image": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?cs=srgb&dl=pexels-fotoaibe-1643383.jpg&fm=jpg",
+      "reviews": [
+        {
+          "rating": 0,
+          "comment": "Awsome house",
+          "username": "kumarsunny30066@gmail.com"
+        },
+        {
+          "rating": 4,
+          "comment": "Great house",
+          "username": "kumarsunny30066@gmail.com"
+        }
+      ]
     },
     {
       "id": "2",
@@ -399,7 +411,60 @@
     {
       "user_id": "kumarsunny30066@gmail.com",
       "user_listing": [],
-      "user_wishlist": [],
+      "user_wishlist": [
+        {
+          "id": "1",
+          "description": "2 BHK Flat In Luxury Apartment Bangalore for Rent",
+          "title": "KORAMANGALA Elite Residency",
+          "location": "Bangalore",
+          "rent": 25000,
+          "maintenance": "No Extra Maintenance",
+          "area": 1050,
+          "furniture_type": "Fully Furnished",
+          "property_type": "Rent",
+          "flat_type": "2 BHK",
+          "prefer_category": "Family",
+          "image": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?cs=srgb&dl=pexels-fotoaibe-1643383.jpg&fm=jpg",
+          "reviews": [
+            {
+              "rating": 0,
+              "comment": "Awsome house",
+              "username": "kumarsunny30066@gmail.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Great house",
+              "username": "kumarsunny30066@gmail.com"
+            }
+          ]
+        },
+        {
+          "id": "1",
+          "description": "2 BHK Flat In Luxury Apartment Bangalore for Rent",
+          "title": "KORAMANGALA Elite Residency",
+          "location": "Bangalore",
+          "rent": 25000,
+          "maintenance": "No Extra Maintenance",
+          "area": 1050,
+          "furniture_type": "Fully Furnished",
+          "property_type": "Rent",
+          "flat_type": "2 BHK",
+          "prefer_category": "Family",
+          "image": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?cs=srgb&dl=pexels-fotoaibe-1643383.jpg&fm=jpg",
+          "reviews": [
+            {
+              "rating": 0,
+              "comment": "Awsome house",
+              "username": "kumarsunny30066@gmail.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Great house",
+              "username": "kumarsunny30066@gmail.com"
+            }
+          ]
+        }
+      ],
       "id": 6
     }
   ]

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Property } from '../../types';
 import Footer from '../common/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,30 +6,35 @@ import { faBuildingCircleExclamation, faChartArea, faHeart, faHouseChimneyCrack,
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 import { Box,useToast, ChakraProvider, Flex, Text, VStack, Button, Image, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, useDisclosure, Textarea, HStack, Heading, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import { useWishlist } from '../../hooks/useWishList';
-import {  store } from '../../hooks/store';
-import { userReducer } from '../../redux/userReducer';
-import { useSelector, useDispatch } from'react-redux';
+import { useSelector} from'react-redux';
 import { RootState } from '../../redux/store';
-import { FETCH_WISHLIST ,ADD_TO_WISHLIST,REMOVE_FROM_WISHLIST } from '../../redux/actionTypes';
+import googleImage from '../../assets/Images/google-image.png';
+import axios from 'axios';
+import { Tooltip } from '@chakra-ui/react';
+
 
 interface PropertyDetailProps {
   property: Property;
 }
 interface Review {
+  username:string,
   rating: number;
   comment: string;
 }
 
+interface userEmailType{
+  email: string;
+  subject: string;
+  message: string;
+}
 
 
 const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
   const toast = useToast();
 
-  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.7749179518!2d77.30126246150184!3d12.954459536902307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBangaluru!5e0!3m2!1sen!2sin!4v1718613888867!5m2!1sen!2sin`;
   const currentUser = useSelector((store:RootState) => store.user);
-  const { fetchWishlist,addToWishlist,removeFromWishlist} = useWishlist();
+  const {addToWishlist,removeFromWishlist} = useWishlist(currentUser.user_id)
 
-  const dispatch = useDispatch();
   console.log(currentUser);
   const [wishlist, setWishlist] = useState(()=>{
     if(currentUser.wishlist){
@@ -40,11 +45,26 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
     }
     return false;
   });
-  // console.log(wishlist);
+  // console.log(currentUser);
   const [reviews, setReviews] = useState<Review[]>([]);
-  const [newReview, setNewReview] = useState<Review>({ rating: 0, comment: '' });
+  const [newReview, setNewReview] = useState<Review>({ rating: 0, comment: '', username:'' });
+  const [userEmail,setUserEmail] = useState<userEmailType>({email:'', subject: '', message:''});
   const { isOpen: isOwnerModalOpen, onOpen: onOwnerModalOpen, onClose: onOwnerModalClose } = useDisclosure();
   const { isOpen: isChatModalOpen, onOpen: onChatModalOpen, onClose: onChatModalClose } = useDisclosure();
+
+  useEffect(()=>{
+    async function fetchReviews (){
+      try{
+        const response = await axios.get(`http://localhost:5001/properties/${property.id}/`);
+        console.log("frefviews",response.data);
+        setReviews(response.data.reviews || []);
+      }
+      catch(err){
+        console.log(err);
+      }
+    }
+    fetchReviews();
+  },[]);
 
   const handleWishlistToggle = () => {
     setWishlist(!wishlist);
@@ -69,10 +89,19 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
       })
     }
   };
-
-  const handleReviewSubmit = () => {
-    setReviews([...reviews, newReview]);
-    setNewReview({ rating: 0, comment: '' });
+  console.log("reviews",reviews);
+  const handleReviewSubmit = async () => {
+    try{
+      const response = await axios.patch(`http://localhost:5001/properties/${property.id}/`,{
+        reviews: [...reviews,{...newReview,username:currentUser.user_id}],
+      });
+      console.log("responsepatch",response.data.reviews)
+      setReviews(response.data.reviews); 
+      setNewReview({ rating: 0, comment: '',username:'' });
+    }
+    catch(error){
+      console.log(error);
+    }
   };
 
   const handleRatingChange = (rating: number) => {
@@ -115,28 +144,34 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
               <Flex width="100%" justifyContent="space-between">
                 <Button colorScheme="green" onClick={onOwnerModalOpen}>Contact Owner</Button>
                 <Button colorScheme="green" onClick={handleWishlistToggle}>
-                  <FontAwesomeIcon icon={faHeart} color={wishlist ? 'red' : 'white'} />
+                 <Tooltip label={wishlist ?"Remove From WishList" : "Add To Wishlist"}><FontAwesomeIcon icon={faHeart} color={wishlist ? 'red' : 'white'} /></Tooltip>
                 </Button>
-                <Button colorScheme="green" onClick={onChatModalOpen}><FontAwesomeIcon icon={faMessage} color='white' /></Button>
+                <Tooltip label="Message Owner"><Button colorScheme="green" onClick={onChatModalOpen}><FontAwesomeIcon icon={faMessage} color='white' /></Button></Tooltip>
               </Flex>
             </VStack>
           </Flex>
 
           <Box mt={10} p={5} boxShadow="lg" borderRadius="md">
             <Heading as="h4" size="md" mb={4}>Reviews</Heading>
-            {reviews.map((review, index) => (
+            {
+              reviews.length === 0 && (
+                <Text>No Reviews Yet</Text>
+              )
+            }
+            { reviews.length > 0 && reviews.map((review, index) => (
               <Box key={index} p={3} mb={3} border="1px" borderColor="gray.200" borderRadius="md">
                 <Flex justifyContent="space-between">
-                  <Text><strong>Username:</strong> User {index + 1}</Text>
+                  <Text><strong>User:</strong> {review.username}</Text>
                   <HStack spacing={1}>
                     {Array.from({ length: 5 }, (_, i) => (
-                      <FontAwesomeIcon key={i} icon={i < review.rating ? faStarSolid : faStarRegular} color="yellow" />
+                      <FontAwesomeIcon key={i} icon={i < review.rating ? faStarSolid : faStarRegular} color="Green" />
                     ))}
                   </HStack>
                 </Flex>
                 <Text mt={2}><strong>Comment:</strong> {review.comment}</Text>
               </Box>
             ))}
+
             <Box mt={5}>
               <Heading as="h4" size="md" mb={3}>Add a Review</Heading>
               <HStack spacing={1}>
@@ -144,7 +179,7 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
                   <FontAwesomeIcon
                     key={i}
                     icon={i < newReview.rating ? faStarSolid : faStarRegular}
-                    color="yellow"
+                    color="green"
                     onClick={() => handleRatingChange(i + 1)}
                     cursor="pointer"
                   />
@@ -176,37 +211,31 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
         </Modal>
 
          {/* Map and Enquiry Section */}
-         <Flex direction={['column', 'column', 'row']} mt={10} gap={10}>
+         <Flex direction={['column', 'column', 'row']} mt={10} gap={10} maxWidth={1440} px={10} mx="auto">
             <Box flexBasis="50%" boxShadow="lg" borderRadius="md" p={5}>
               <Heading as="h4" size="md" mb={3}>Property Location</Heading>
-              <Box
-            as="iframe"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.7749179518!2d77.30126246150184!3d12.954459536902307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1718613888867!5m2!1sen!2sin"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+              
+              <Box>
+                <Image height={500} src={googleImage} alt='google-map' width="100%" display="block" mx="auto" borderRadius={5} />
+              </Box>
+
             </Box>
             <Box flexBasis="50%" boxShadow="lg" borderRadius="md" p={5}>
               <Heading as="h4" size="md" mb={3}>Send Enquiry Mail</Heading>
-              <FormControl id="email" mb={3}>
-                <FormLabel>Your Email</FormLabel>
-                <Input type="email" placeholder="Enter your email" />
-              </FormControl>
-              <FormControl id="subject" mb={3}>
-                <FormLabel>Subject</FormLabel>
-                <Input type="text" placeholder="Enter subject" />
-              </FormControl>
-              <FormControl id="message" mb={3}>
-                <FormLabel>Message</FormLabel>
-                <Textarea rows={10} placeholder="Enter your message" />
-              </FormControl>
-              <Button
-                colorScheme="blue"
-                onClick={() => {
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (!userEmail.email || !userEmail.subject || !userEmail.message) {
+                    toast({
+                      title: 'Error',
+                      description: 'All fields are required.',
+                      status: 'error',
+                      duration: 3000,
+                      isClosable: true,
+                    });
+                    return;
+                  }
+                  setUserEmail({ email: '', subject: '', message: '' });
                   toast({
                     title: 'Enquiry Sent.',
                     description: "We've received your enquiry and will get back to you soon.",
@@ -216,8 +245,41 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
                   });
                 }}
               >
-                Send
-              </Button>
+                <FormControl id="email" mb={3}>
+                  <FormLabel>Your Email</FormLabel>
+                  <Input
+                    type="email"
+                    value={userEmail.email}
+                    placeholder="Enter your email"
+                    onChange={(e) => setUserEmail({ ...userEmail, email: e.target.value })}
+                    required
+                  />
+                </FormControl>
+                <FormControl id="subject" mb={3}>
+                  <FormLabel>Subject</FormLabel>
+                  <Input
+                    type="text"
+                    value={userEmail.subject}
+                    placeholder="Enter subject"
+                    onChange={(e) => setUserEmail({ ...userEmail, subject: e.target.value })}
+                    required
+                  />
+                </FormControl>
+                <FormControl id="message" mb={3}>
+                  <FormLabel>Message</FormLabel>
+                  <Textarea
+                    rows={10}
+                    value={userEmail.message}
+                    placeholder="Enter your message"
+                    onChange={(e) => setUserEmail({ ...userEmail, message: e.target.value })}
+                    minLength={10}
+                    required
+                  />
+                </FormControl>
+                <Button type="submit" colorScheme="blue">
+                  Send
+                </Button>
+              </form>
             </Box>
           </Flex>
 
