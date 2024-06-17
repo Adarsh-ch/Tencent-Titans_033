@@ -3,6 +3,9 @@ import axios from 'axios';
 import '../../styles/PostYourProperty.css'
 import { Link } from 'react-router-dom';
 import Footer from '../common/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
+import { ADD_TO_LISTING } from '../../redux/actionTypes';
 
 
 interface Property {
@@ -33,7 +36,8 @@ const PostYourProperty: React.FC = () => {
     prefer_category: 'Bachelor',
     image: '',
   });
-
+  const dispatch = useDispatch();
+  const user_id = useSelector((state: RootState) => state.user.user_id)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -47,8 +51,22 @@ const PostYourProperty: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      
       const response = await axios.post('http://localhost:5001/properties', property);
-      console.log('Response:', response.data);
+
+      
+      if (response.data && typeof response.data === 'object') {
+       
+        dispatch({ type: ADD_TO_LISTING, payload: response.data });
+
+
+         await axios.patch(`http://localhost:5001/userProfiles/${user_id}`, {
+          user_listing: [...response.data] 
+        });
+      
+      } else {
+        console.error('Invalid response data structure:', response.data);
+      }
     } catch (error) {
       console.error('Error posting property:', error);
     }
