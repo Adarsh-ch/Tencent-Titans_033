@@ -1,4 +1,22 @@
-# React + TypeScript + Vite
+# Project title - E StateX 
+# Overview
+E StateX is an advanced real estate management system designed to streamline the processes involved in property management, client interactions, and transaction handling. It is aimed at real estate agencies, property managers, and individual agents seeking to enhance efficiency and productivity through a comprehensive, user-friendly platform.
+
+## Technology Stack
+  - **HTML**
+  - **CSS**
+  - **Bootstrap**
+  - **React+ Vite + TypeScript**
+  - **JSON Server**
+
+## Team Members
+- Adarsh Chaturvedi
+- Disha Paltani
+- Sunny Kumar
+- Mohan Krishna
+
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
