@@ -16,7 +16,7 @@ export const AdminPage = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await fetch('http://localhost:5001/properties');
+        const response = await fetch('https://server-deploy-7sg1.onrender.com/properties');
         const data = await response.json();
         setProperties(data);
       } catch (error) {
@@ -26,7 +26,7 @@ export const AdminPage = () => {
 
     const fetchUserProfiles = async () => {
       try {
-        const response = await fetch('http://localhost:5001/userProfiles');
+        const response = await fetch('https://server-deploy-7sg1.onrender.com/properties');
         const data = await response.json();
         setUserProfiles(data);
       } catch (error) {

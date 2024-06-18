@@ -55,7 +55,7 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
   useEffect(()=>{
     async function fetchReviews (){
       try{
-        const response = await axios.get(`http://localhost:5001/properties/${property.id}/`);
+        const response = await axios.get(`https://server-deploy-7sg1.onrender.com/properties/${property.id}/`);
         // console.log("frefviews",response.data);
         setReviews(response.data.reviews || []);
       }
@@ -92,7 +92,7 @@ const PropertyDetail: React.FC<PropertyDetailProps> = ({ property }) => {
   // console.log("reviews",reviews);
   const handleReviewSubmit = async () => {
     try{
-      const response = await axios.patch(`http://localhost:5001/properties/${property.id}/`,{
+      const response = await axios.patch(`https://server-deploy-7sg1.onrender.com/properties/${property.id}/`,{
         reviews: [...reviews,{...newReview,username:currentUser.user_id}],
       });
       // console.log("responsepatch",response.data.reviews)

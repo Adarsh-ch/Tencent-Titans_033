@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { UserProfile } from 'firebase/auth';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5001'
+  baseURL: 'https://server-deploy-7sg1.onrender.com/'
 });
 
 export const fetchData = async (query : string) => {

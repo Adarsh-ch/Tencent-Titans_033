@@ -11,8 +11,8 @@ const PropertyDetailPage: React.FC = () => {
   React.useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/properties/${id}`);
-        console.log(`http://localhost:5001/properties/`+id);
+        const response = await fetch(`https://server-deploy-7sg1.onrender.com/properties/${id}`);
+        console.log(`https://server-deploy-7sg1.onrender.com/properties/`+id);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

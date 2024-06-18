@@ -36,7 +36,7 @@ const Register =() => {
         user_wishlist:[]
        };
 
-       axios.post(`http://localhost:5001/userProfiles`,newUser)
+       axios.post(`https://server-deploy-7sg1.onrender.com/userProfiles`,newUser)
       navigate("/")
     } catch {
       setError("Failed to create an account")
