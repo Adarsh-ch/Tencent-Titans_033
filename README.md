@@ -2,7 +2,7 @@
 
 ### estate X
 
- Estate X  offers a curated selection of limited-time deals on a variety of real estate properties. Explore the latest listings, spanning categories such as residential homes, commercial spaces, vacation properties, and more. With a focus on time-sensitive opportunities,  Estate X  provides users with exclusive property deals and discounts available for a short period, creating a sense of urgency in their search for the perfect property.
+Estate X offers a curated selection of limited-time deals on a variety of real estate properties. Explore the latest listings, spanning categories such as residential homes, commercial spaces, vacation properties, and more. With a focus on time-sensitive opportunities, Estate X provides users with exclusive property deals and discounts available for a short period, creating a sense of urgency in their search for the perfect property.
 
 ### Project Type
 
@@ -15,16 +15,11 @@ Frontend | Backend
 ### Directory Structure
 
 Tencent-Titans_033/
-├─ backend/          
-│  ├─ server.js      
-│  ├─ routes/        
-│ 
-├─ frontend/         
-│  ├─ index.html     
-│  ├─ css/           
-│  ├─ TypeScript/            
-│  └─ data/          
-└─ README.md         
+├─ backend/  
+│ ├─ server.js  
+│ ├─ routes/  
+│
+├─ ...Rest
 
 ### Video Walkthrough of the project
 
@@ -32,52 +27,47 @@ Tencent-Titans_033/
 
 ### Questionnaires related to project
 
--[Video 1]()
--[Video 2]()
+-[Video 1]() -[Video 2]()
 
 ### Screenshots
 
 **Landing Page**
 
-<img src="" alt="">
+<img src="./src/assets/Images/Landing-1.png" alt="">
 
+**Properties Page**
 
-**Login and Signup Page**
+<img src="./src/assets/Images/property.png" alt="">
 
-<div style="display: flex; flex-direction: row;">
-  <img src="" alt="">
-  <img src="" alt="">
-</div>
+**Property Detail Page**
 
+<img src="./src/assets/Images/propertyDetails.png" alt="">
 
-**Card Page**
+**Whislist Page**
 
-<img src="./Site screenshots/Card page.png" alt="">
+<img src="./src/assets/Images/Wishlist.png" alt="">
 
-**Product Detail Page**
-
-
-<img src="./Site screenshots/Product details page.png" alt="">
-
-**Cart Page**
-
-
-<img src="./Site screenshots/Cart page.png" alt="">
-
+**Mobile view**
+<img src="./src/assets/Images/Mobile view.png" alt="">
 
 ### Features
 
 - **Login and Signup**: "Effortlessly access exclusive deals by logging in or sign up for personalized shopping experiences.
-- **Cart**: Keep track of your favorite deals and products with our convenient cart feature.
+- **Whislist**: Keep track of your favorite deals properties.
 - **Search bar**: Easily find the deals you love with our intuitive search bar.
-- **Product Details Page**:Explore comprehensive information and make informed decisions on our product details page.
+- **Property Details Page**:Explore comprehensive information and make informed decisions on our product details page.
 - **carousel**:Discover a dynamic showcase of featured deals with our engaging carousel.
 
 ### Tech Stack
 
 - **HTML**: Provides the structure and content for the web page.
 - **CSS**: Handles the UI and styling, ensuring an appealing visual presentation.
-- **Javascript**:JavaScript empowers dynamic and interactive web experiences through its versatile scripting capabilities.
+- **React**:Facilitates building interactive and dynamic user interfaces through reusable components and efficient state management.
+
+- **Bootstrap**:Offers a responsive and mobile-first framework, simplifying the design and layout of web pages with pre-built components and styles.
+- **Chakra**:A UI library that provides accessible, themeable, and reusable components for building modern web applications with ease.
+- **Re-Chart**:Enables the creation of customizable and interactive charts and graphs, making it easier to visualize data effectively in React applications.
+- **Typescript**:TypeScript empowers dynamic and interactive web experiences through its versatile scripting capabilities.
 - **Json Server**:JSON Server simplifies backend development by allowing you to quickly create a REST API with JSON data, streamlining your development process and enabling rapid prototyping.
 
 ### Design Elements
@@ -90,24 +80,53 @@ Tencent-Titans_033/
 
 - **Fonts & Icons**: Integrates Google Fonts and FontAwesome icons for enhanced typography and visual elements. By leveraging these resources, the website achieves a modern and visually appealing design, improving readability and user engagement.
 
-
 ### How to Use
 
 To run this project locally:
 
 1. Clone this repository to your local machine.
-2. Open the index.html file in your preferred web browser.
-3. Additionally, ensure that you have the JSON server running locally by executing npm run start in your terminal. This will provide the necessary data from the backend.
-4. Explore the Zepto experience right from your device.
+
+```
+git clone https://github.com/Adarsh-ch/Tencent-Titans_033
+
+```
+
+2. Navigate to the project directory.
+
+```
+cd Tencent-Titans_033
+
+```
+
+3.Install the dependencies.
+
+```
+npm install
+
+```
+
+4. Start the development server.
+
+```
+npm run dev
+
+```
+
+5. Start JSON serve
+
+```
+npm run start
+
+```
 
 ### Contributors
 
 - [Adarsh Chaturvedi](https://github.com/Adarsh-ch)
-- [	Venigalla Mohan Krishna](https://github.com/mohankrish1)
+- [ Venigalla Mohan Krishna](https://github.com/mohankrish1)
 - [Disha Paltani](https://github.com/DishaPaltani)
-- [	Sunny Kumar](https://github.com/aniyant)
+- [ Sunny Kumar](https://github.com/aniyant)
 
 ### Acknowledments
 
-- Inspired by Zepto original website.
+- Inspired by our own thoughts.
 - Special thanks to our dedicated team for their invaluable contributions to Zepto and our mentor/IA Ritesh Ranjan Sir for giving us directions and material for this project.
