@@ -8,13 +8,13 @@
 }
 .Left-sidebar{
 width: 20%;
-background-color: #e3e3e3;
+background-color: #f1f5f9;
 display: flex;
 flex-direction: column;
 gap: 10px;
 padding: 15px;
 font-family: 'Times New Roman', Times, serif;
-border-right: 1px solid #a6a6a6;
+
 }
 .Left-sidebar p{
 text-align: center;

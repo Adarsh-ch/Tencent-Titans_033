@@ -60,11 +60,14 @@ const PropertyList: React.FC = () => {
 
   return (
     <>
-      <SearchInput value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+     
       <div className="main-container">
+        
         <Filter />
         <div>
+        <SearchInput value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
           <div className="property-list">
+          
             {filteredProperties.map((property) => (
               <PropertyCard key={property.id} property={property} />
             ))}
