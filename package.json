@@ -3,17 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "server.js",
+ 
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "node server.js",
+   
 
     
 
-    "json":"json-server --watch db.json --port=5001"
+    "start":"json-server --watch db.json --port=5001"
+
 
   },
   "dependencies": {
