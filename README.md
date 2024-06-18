@@ -10,7 +10,7 @@ Frontend | Backend
 
 ### Deployed Link
 
--[Live Demo ]()
+-[Live Demo ](https://estate-x.netlify.app/)
 
 ### Directory Structure
 
