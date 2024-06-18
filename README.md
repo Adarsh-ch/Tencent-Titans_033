@@ -23,11 +23,11 @@ Tencent-Titans_033/
 
 ### Video Walkthrough of the project
 
--[Presentation Link]()
+-[Presentation Link](https://youtu.be/vRymSOUnxGU)
 
 ### Questionnaires related to project
 
--[Video 1]() -[Video 2]()
+-[Video 1](https://youtu.be/jdvzZ7Jyvmc) -[Video 2](https://youtu.be/nYPSRGKbNsg)
 
 ### Screenshots
 
