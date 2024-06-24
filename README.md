@@ -4,6 +4,10 @@
 
 Estate X offers a curated selection of limited-time deals on a variety of real estate properties. Explore the latest listings, spanning categories such as residential homes, commercial spaces, vacation properties, and more. With a focus on time-sensitive opportunities, Estate X provides users with exclusive property deals and discounts available for a short period, creating a sense of urgency in their search for the perfect property.
 
+### To view admin Dash-board
+-username:admin@gmail.com
+-password:admin12345
+
 ### Project Type
 
 Frontend | Backend
